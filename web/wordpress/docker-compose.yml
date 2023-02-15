@@ -23,7 +23,7 @@ services:
         define('FORCE_SSL_ADMIN', false);
     volumes:
       - ./config/php.conf.uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
-      - ./wordpress:/var/www/html
+      - ../../../custom-apps-data/wordpress/wordpress:/var/www/html
     # labels:
     #   - "traefik.enable=true"
     #   - "traefik.frontend.rule=Host:wp.wuwb.me"
