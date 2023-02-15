@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  watchtower:
+    image: containrrr/watchtower
+    container_name: watchtower
+    restart: unless-stopped  
+    networks:
+      - traefik
+    command: --schedule "0 5 * * *" --cleanup --label-enable
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - "~/.docker/config.json:/config.json" # Optional, for authentication if you have a Docker Hub account
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+    environment:
+      TZ: Asia/Shanghai
+      WATCHTOWER_POLL_INTERVAL: 86400 # Checks for updates every two hours
+      WATCHTOWER_INCLUDE_STOPPED: 0       # Include stopped containers
+      WATCHTOWER_REVIVE_STOPPED: 0        # Restart stopped containers
+      WATCHTOWER_CLEANUP: 1               # Delete unused image
+      WATCHTOWER_LABEL_ENABLE: 1          # Only include containers with enable label
+      WATCHTOWER_LIFECYCLE_HOOKS: 1       # Enable pre/post-update scripts
+
+networks:
+    traefik:
+        name: traefik

@@ -1,0 +1,44 @@
+version: '3.9'
+
+services:
+  traefik-forward-auth:
+    image: thomseddon/traefik-forward-auth:v2.2.0
+    restart: always
+    hostname: traefik-auth.nas.com
+    environment:
+      - LOG_LEVEL=trace
+      
+      - DEFAULT_PROVIDER=generic-oauth
+
+      - PROVIDERS_GENERIC_OAUTH_AUTH_URL=http://sso.nas.com:52080/dialog/authorize
+      - PROVIDERS_GENERIC_OAUTH_TOKEN_URL=http://sso.nas.com:52080/oauth/token
+      - PROVIDERS_GENERIC_OAUTH_USER_URL=http://sso.nas.com:52080/api/userinfo
+      - PROVIDERS_GENERIC_OAUTH_USER_URL=http://sso.nas.com:52080/api/traefik-auth-user
+      - PROVIDERS_GENERIC_OAUTH_CLIENT_ID=sso-server-id
+      - PROVIDERS_GENERIC_OAUTH_CLIENT_SECRET=sso-server-secret
+
+      - PROVIDERS_GENERIC_OAUTH_SCOPE=*
+      - PROVIDERS_GENERIC_OAUTH_TOKEN_STYLE=header
+
+      - SECRET=something-random
+      - INSECURE_COOKIE=true
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
+
+      - "traefik.http.routers.traefik-auth.entrypoints=http"
+      - "traefik.http.routers.traefik-auth.rule=Host(`traefik-auth.nas.com`)"
+
+      # - "traefik.http.routers.traefik-auth-ssl.entrypoints=https"
+      # - "traefik.http.routers.traefik-auth-ssl.tls=true"
+      # - "traefik.http.routers.traefik-auth-ssl.rule=Host(`traefik-auth.nas.com`)"
+
+      - "traefik.http.middlewares.traefik-forward-auth.forwardauth.address=http://traefik-forward-auth:4181"
+      - "traefik.http.middlewares.traefik-forward-auth.forwardauth.authResponseHeaders=X-Forwarded-User"
+      - "traefik.http.services.traefik-forward-auth.loadbalancer.server.port=4181"
+    networks:
+      - traefik
+
+networks:
+  traefik:
+    external: true

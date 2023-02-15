@@ -1,0 +1,10 @@
+version: '3.9'
+
+services:
+  adminer:
+    image: adminer
+    container_name: adminer
+    depends_on:
+      - mariadb
+    ports:
+      - 8080:8080

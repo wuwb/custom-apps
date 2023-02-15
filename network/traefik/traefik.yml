@@ -1,0 +1,180 @@
+global:
+  checkNewVersion: false
+  sendAnonymousUsage: false
+
+# experimental:
+#   http3: true
+#   http:
+#     enablehttp3: true
+
+entryPoints:
+  http:
+    address: ":80"
+    # gzip: true
+    # http:
+    #     redirections:
+    #         entryPoint:
+    #             to: https
+    #             scheme: https
+    # forwardedHeaders:
+    #   insecure: true
+    # proxyProtocol: 
+    #   insecure: true # Insecure Mode (Testing Environment Only).
+  https:
+    address: ":443"
+  git:
+    address: ":22"
+  mysql:
+    address: ":3306"
+  postgres:
+    address: ":5432"
+  ping:
+    address: ":8082"
+  metrics:
+    address: ":8083"
+
+ServersTransport:
+  InsecureSkipVerify: true
+  # rootCAs:
+  #   - /mycert.cert
+  # maxIdleConnsPerHost: 42
+
+log:
+  level: WARN
+  format: common # json
+  # filePath: /path/to/log-file.log
+
+accessLog:
+  filePath: "/var/log/access.log"
+  bufferingSize: 100
+
+# tracing:
+#     servicename: tracing
+#     jaeger:
+#         samplingParam: 1
+#         samplingServerURL: 'http://12.0.0.1:5778/sampling'
+#         samplingType: const
+#         localAgentHostPort: '12.0.0.1:6831'
+
+metrics:
+  prometheus:
+    buckets:
+      - 0.1
+      - 0.3
+      - 1.2
+      - 5.0
+    addEntryPointsLabels: true
+    addRoutersLabels: false
+    addServicesLabels: true
+    entryPoint: metrics
+    manualRouting: false
+
+api:
+  dashboard: true
+  insecure: true
+  debug: false
+
+ping:
+  entryPoint: "ping"
+  # 手动设置 ping 服务
+  manualRouting: false 
+  # gracefully shutting down return 503
+  terminatingStatusCode: 503
+
+providers:
+  providersThrottleDuration: 42
+  docker:
+    # Docker服务后端
+    endpoint: "unix:///var/run/docker.sock"
+    # 对容器默认进行暴露（默认开启）
+    exposedByDefault: false
+    # 使用 Swarm Mode （默认关闭）
+    swarmMode: false
+    # 监控 docker 变化
+    # watch: false
+    # 使用绑定端口的IP地址取代内部私有网络（默认关闭）
+    # useBindPortIP: false
+    network: traefik
+    # httpClientTimeout: 300
+    # domain: "dashboard.nas.com"
+    # tls: 
+    #     insecureSkipVerify: true
+  # file:
+    # watch: true
+    # directory: "/etc/traefik/config"
+    # debugLogGeneratedTemplate: true
+
+
+# certificatesResolvers:
+#     myresolver:
+#         acme:
+#             email: bin2302@gmail.com
+#             storage: /letsencrypt/acme.json
+#             httpChallenge:
+#                 entryPoint: https
+#             tlsChallenge: {}
+#             caServer: https://acme-staging-v02.api.letsencrypt.org/directory
+
+http:
+  routers:
+        # api:
+        #     rule: "Host(`dashboard.nas.com`) && (PathPrefix(`/api`) || PathPrefix(`/dashboard`))"
+        #     entrypoints: ["http"]
+        #     service: api@internal
+        #     # middlewares: ["gzip"]
+        #     # tls: {}
+        # dashboard:
+        #     rule: "Host(`dashboard.nas.com`)"
+        #     entrypoints: ["http"]
+        #     service: "dashboard@internal"
+        #     # middlewares: ["gzip"]
+        #     # tls: {}
+        # ping:
+        #     rule: "Host(`dashboard.nas.com`) && PathPrefix(`/ping`)"
+        #     entrypoints: ["http"]
+        #     service: "ping@internal"
+        #     # middlewares: ["gzip"]
+        #     # tls: {}
+        # router0:
+        #     rule: "Host(`wuwb.me`)"
+        #     service: my-service
+        #     middlewares:
+        #     - auth
+
+    # services:
+    #     noop:
+    #         LoadBalancer:
+    #             servers:
+    #             - url: ""
+    #     my-service:
+    #         loadBalancer:
+    #             servers:
+    #             - url: http://10.10.10.1:80
+    #             - url: http://10.10.10.2:80
+  middlewares:
+    gzip:
+      compress:
+    auth:
+      basicAuth:
+        users:
+          - "test:$apr1$H6uskkkW$IgXLP6ewTrSuBkTrqE8wj/"
+
+# tls:
+#     options:
+#         default:
+#             minVersion: VersionTLS13
+#             cipherSuites:
+#                 - TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+#                 - TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+#                 - TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305
+#                 - TLS_AES_128_GCM_SHA256
+#                 - TLS_AES_256_GCM_SHA384
+#                 - TLS_CHACHA20_POLY1305_SHA256
+#             curvePreferences:
+#                 - CurveP521
+#                 - CurveP384
+#             sniStrict: true
+
+
+# pilot:
+#     token: "6f44d3b5-01e4-41ae-b2b1-02d9745d50d8"

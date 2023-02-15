@@ -1,0 +1,50 @@
+version: "3.9"
+
+services:
+  # 依赖 mariadb 服务
+  nextcloud:
+    image: nextcloud:22.1.1
+    restart: always
+    ports:
+      - 8088:80
+    volumes:
+      # Linux 环境下使用
+      # - /etc/localtime:/etc/localtime:ro
+      # - /etc/timezone:/etc/timezone:ro
+      - ./data:/var/www/html/data:rw
+      - ./config:/var/www/html/config
+      # - ./config.php:/var/www/html/config/config.php:rw
+    networks:
+      - traefik
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
+
+      - "traefik.http.routers.nextcloud.rule=Host(`nextcloud.nas.com`)"
+      - "traefik.http.routers.nextcloud.entrypoints=http"
+      
+      # - "traefik.http.routers.nextcloud.middlewares=https-redirect@file"
+      - "traefik.http.routers.nextcloud-ssl.rule=Host(`nextcloud.nas.com`)"
+      - "traefik.http.routers.nextcloud-ssl.entrypoints=https"
+      - "traefik.http.routers.nextcloud-ssl.tls=true"
+      # - "traefik.http.routers.nextcloud-ssl.middlewares=content-compress@file"
+
+      - "traefik.http.services.nextcloud.loadbalancer.server.scheme=http"
+      - "traefik.http.services.nextcloud.loadbalancer.server.port=80"
+    # healthcheck:
+    #   test: ["CMD-SHELL", "curl -f localhost/status.php || exit 1"]
+    #   interval: 5s
+    #   retries: 12
+    logging:
+        driver: "json-file"
+        options:
+            max-size: "1m"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 2048M
+
+networks:
+  traefik:
+    external: true

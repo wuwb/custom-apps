@@ -1,0 +1,87 @@
+version: "3.9"
+
+services:
+  ttrss:
+    image: wangqiru/ttrss:latest
+    container_name: ttrss
+    ports:
+      - 181:80
+    environment:
+      - SELF_URL_PATH=http://10.0.0.2:181/ # please change to your own domain
+      #- SELF_URL_PATH=http://192.168.68.2:181/ # please change to your own domain
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=ttrss
+      - DB_USER=root
+      - DB_PASS=202402. # use the same password defined in `database.postgres`
+      - PUID=1000
+      - PGID=1000
+      - FEED_LOG_QUIET=true
+      - SESSION_COOKIE_LIFETIME=262800
+      - ALLOW_PORTS=182
+    volumes:
+      - feed-icons:/var/www/feed-icons/
+    networks:
+      - internal
+      - traefik
+    labels:
+        - "traefik.enable=true"
+        - "traefik.docker.network=traefik"
+
+        - "traefik.http.routers.ttrss.rule=Host(`ttrss.nas.com`)"
+        - "traefik.http.routers.ttrss.entrypoints=http"
+        # - "traefik.http.routers.ttrss.middlewares=traefik-forward-auth@docker"
+
+        # - "traefik.http.routers.ttrss-ssl.entrypoints=https"
+        # - "traefik.http.routers.ttrss-ssl.tls=true"
+        # - "traefik.http.routers.ttrss-ssl.rule=Host(`ttrss.nas.com`)"
+        # - "traefik.http.routers.ttrss-ssl.middlewares=traefik-forward-auth@docker"
+
+    stdin_open: true
+    tty: true
+    restart: always
+    deploy:
+      resources:
+        limits:
+          cpus: '0.2'
+          memory: 200M
+        # reservations:
+        #   cpus: '0.0001'
+        #   memory: 20M
+
+  service.mercury: # set Mercury Parser API endpoint to `service.mercury:3000` on TTRSS plugin setting page
+    image: wangqiru/mercury-parser-api:latest
+    container_name: mercury
+    networks:
+      - traefik
+      - internal
+    restart: always
+
+  service.opencc: # set OpenCC API endpoint to `service.opencc:3000` on TTRSS plugin setting page
+    image: wangqiru/opencc-api-server:latest
+    container_name: opencc
+    environment:
+      - NODE_ENV=production
+    networks:
+      - internal
+    restart: always
+
+  # database.postgres:
+  #   image: postgres:13-alpine
+  #   container_name: postgres
+  #   environment:
+  #     - POSTGRES_PASSWORD=wuwbttrss # feel free to change the password
+  #   volumes:
+  #     - ./postgres/data/:/var/lib/postgresql/data # persist postgres data to ~/postgres/data/ on the host
+  #   networks:
+  #     - database_only
+
+volumes:
+  feed-icons:
+
+networks:
+  internal: # Provide the communication network between services only
+    internal: true
+    external: false
+  traefik:
+    external: true

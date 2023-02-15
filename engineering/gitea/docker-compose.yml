@@ -1,0 +1,72 @@
+version: '3.9'
+
+services:
+  gitea:
+    image: gitea/gitea:1.13.2
+    container_name: gitea.nas.com
+    ports:
+      - 22:22
+      - 8084:80
+    environment:
+      - USER_UID=0
+      - USER_GID=0
+      - APP_NAME=Gitea
+      - RUN_MODE=prod
+      - RUN_USER=git
+      - DOMAIN=192.168.68.2
+      - HTTP_PORT=80
+      - ROOT_URL=http://192.168.68.2:8084
+      - SSH_DOMAIN=192.168.68.2
+      - SSH_PORT=22
+      - SSH_LISTEN_PORT=22
+      - DB_TYPE=sqlite3
+      - LFS_START_SERVER=true
+      - REQUIRE_SIGNIN_VIEW=true
+      - INSTALL_LOCK=false
+      - DISABLE_GRAVATAR=true
+      - ALLOW_LOCALNETWORKS=true
+    networks:
+      - traefik
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
+
+      - "traefik.http.routers.gitea.rule=Host(`gitea.nas.com`)"
+      - "traefik.http.routers.gitea.entrypoints=http"
+
+      - "traefik.tcp.routers.gitea.rule=HostSNI(`*`)"
+      - "traefik.tcp.routers.gitea.entrypoints=mysql"
+      - "traefik.tcp.routers.gitea.service=maradb"
+
+      # 选择性使用，需要提前定义 https-redirect，可以参考之前博客文章
+      # - "traefik.http.routers.gitea.middlewares=https-redirect@file"
+
+      # - "traefik.http.routers.gitea-ssl.entrypoints=https"
+      # - "traefik.http.routers.gitea-ssl.tls=true"
+      # - "traefik.http.routers.gitea-ssl.rule=Host(`gitea.nas.com`)"
+      
+      - "traefik.http.services.gitea.loadbalancer.server.scheme=http"
+      - "traefik.http.services.gitea.loadbalancer.server.port=8084"
+      - "traefik.http.services.gitea-ssh.loadbalancer.server.scheme=ssh"
+      - "traefik.http.services.gitea-ssh.loadbalancer.server.port=8022"
+    volumes:
+      # 标准 Linux 系统下使用
+      # - /etc/localtime:/etc/localtime:ro
+      # - /etc/timezone:/etc/timezone:ro
+      - ./repositories:/data/git/repositories
+      - ./data:/data/gitea/
+      - /share/homes/admin/.ssh/:/data/git/.ssh
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+    extra_hosts:
+      - "gitea.nas.com:127.0.0.1"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider --proxy off localhost || exit 1"]
+      interval: 5s
+
+networks:
+  traefik:
+    external: true

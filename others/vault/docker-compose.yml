@@ -1,0 +1,33 @@
+version: '3.9'
+
+services:
+
+  vault:
+    image: vault:1.1.2
+    volumes:
+      - ./config:/vault/config:rw
+      - ./file:/vault/file:rw
+      - ./logs:/vault/logs
+    cap_add:
+      - IPC_LOCK
+    entrypoint: vault server -config=/vault/config/vault.json
+    restart: always
+    expose:
+      - 8200
+    networks:
+      - traefik
+    labels:
+      - "traefik.enable=true"
+      - "traefik.port=8200"
+      - "traefik.frontend.rule=Host:vault.nas.com"
+      - "traefik.frontend.entryPoints=https,http"
+      - "traefik.frontend.headers.customResponseHeaders=Access-Control-Allow-Origin:*"
+      - "traefik.frontend.headers.customRequestHeaders=X-Vault-Token:s.oaLMHNEBsW8KrmtDqxczfriI"
+    logging:
+        driver: "json-file"
+        options:
+            max-size: "10m"
+            
+networks:
+  traefik:
+    external: true

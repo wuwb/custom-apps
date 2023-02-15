@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  portainer:
+    image: portainer/portainer
+    container_name: portainer
+    ports:
+      - "9000:9000"
+    networks:
+      - postgres
+    command: -H unix:///var/run/docker.sock # 设置启动参数
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock # 映射 host 中安装的 docker 到容器
+      - ./data:/data # 存储数据
+
+networks:
+    postgres:
+        external: true

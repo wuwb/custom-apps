@@ -1,0 +1,20 @@
+400;Bad Request;The server did not understand the request
+401;Unauthorized;The requested page needs a username and a password
+403;Forbidden;Access is forbidden to the requested page
+404;Not Found;The server can not find the requested page
+405;Method Not Allowed;The method specified in the request is not allowed
+407;Proxy Authentication Required;You must authenticate with a proxy server before this request can be served
+408;Request Timeout;The request took longer than the server was prepared to wait
+409;Conflict;The request could not be completed because of a conflict
+410;Gone;The requested page is no longer available
+411;Length Required;The "Content-Length" is not defined. The server will not accept the request without it
+412;Precondition Failed;The pre condition given in the request evaluated to false by the server
+413;Payload Too Large;The server will not accept the request, because the request entity is too large
+416;Requested Range Not Satisfiable;The requested byte range is not available and is out of bounds
+418;I'm a teapot;Attempt to brew coffee with a teapot is not supported
+429;Too Many Requests;Too many requests in a given amount of time
+500;Internal Server Error;The server met an unexpected condition
+502;Bad Gateway;The server received an invalid response from the upstream server
+503;Service Unavailable;The server is temporarily overloading or down
+504;Gateway Timeout;The gateway has timed out
+505;HTTP Version Not Supported;The server does not support the "http protocol" version

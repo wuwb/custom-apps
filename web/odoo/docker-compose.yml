@@ -1,0 +1,40 @@
+version: '3.9'
+
+services:
+  odoo:
+    image: odoo:12.0
+    container_name: odoo
+    restart: always
+    ports:
+      - "8069:8069"
+    networks:
+      - odoo
+    environment:
+      - HOST=postgres
+      - PORT=5432
+      - USER=odoo
+      - PASSWORD=odoo
+    volumes:
+      - ./data/data:/var/lib/odoo
+      - ./data/config:/etc/odoo
+      - ./data/addons:/mnt/extra-addons
+
+  postgres:
+    image: postgres:10
+    container_name: postgres
+    # restart: always
+    ports:
+      - "5432:5432"
+    networks:
+      - odoo
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_USER=odoo
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - /share/Container/data/postgres/data:/var/lib/postgresql/data/pgdata
+
+networks:
+    odoo:
+        external: true

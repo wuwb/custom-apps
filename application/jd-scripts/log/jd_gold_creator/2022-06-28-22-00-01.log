@@ -1,0 +1,78 @@
+
+🔔金榜创造营, 开始!
+
+====================共1个京东账号Cookie=========
+
+==================脚本执行- 北京时间(UTC+8)：2022/6/28 下午10:00:01=====================
+
+
+******开始【京东账号1】***************
+
+共有9个主题
+
+❗️金榜创造营, 错误!
+TypeError: Cannot read property 'taskStatus' of undefined
+    at doTask2 (/jd/scripts/jd_gold_creator.js:217:17)
+    at /jd/scripts/jd_gold_creator.js:170:23
+    at isSurge.isLoon.isQuanX.isNode.got.on.then.message (/jd/scripts/jd_gold_creator.js:351:4869)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+已投票0主题
+
+
+开始给【新奇式尝鲜】主题下的商品进行投票
+当前剩余投票次数：0
+给 【惠氏启赋 蕴淳3段奶粉】 商品投票
+失败：{"isSuccess":false,"code":"3","msg":"用户未登录"}
+
+
+开始给【家庭游乐场】主题下的商品进行投票
+当前剩余投票次数：0
+给 【iQOO Neo5 SE 】 商品投票
+失败：{"isSuccess":false,"code":"3","msg":"用户未登录"}
+
+
+开始给【纯净式护理】主题下的商品进行投票
+当前剩余投票次数：0
+给 【施华蔻 生姜精华洗发露】 商品投票
+失败：{"isSuccess":false,"code":"3","msg":"用户未登录"}
+
+
+开始给【精细化家电】主题下的商品进行投票
+当前剩余投票次数：0
+给 【易开得 500G净水器】 商品投票
+失败：{"isSuccess":false,"code":"3","msg":"用户未登录"}
+
+
+开始给【沉浸式家务】主题下的商品进行投票
+当前剩余投票次数：0
+给 【飞利浦 无线双刷洗地机】 商品投票
+失败：{"isSuccess":false,"code":"3","msg":"用户未登录"}
+
+
+开始给【尽兴乐活派】主题下的商品进行投票
+当前剩余投票次数：0
+给 【小米 智能门锁 】 商品投票
+失败：{"isSuccess":false,"code":"3","msg":"用户未登录"}
+
+
+开始给【潮酷来电家】主题下的商品进行投票
+当前剩余投票次数：0
+给 【华硕无双 12代酷睿i5】 商品投票
+失败：{"isSuccess":false,"code":"3","msg":"用户未登录"}
+
+
+开始给【细致化美学】主题下的商品进行投票
+当前剩余投票次数：0
+给 【浪琴瑞士手表 心月系列】 商品投票
+失败：{"isSuccess":false,"code":"3","msg":"用户未登录"}
+
+
+开始给【立体式健康】主题下的商品进行投票
+当前剩余投票次数：0
+给 【碧然德 过滤净水器】 商品投票
+失败：{"isSuccess":false,"code":"3","msg":"用户未登录"}
+
+揭榜失败：{"isSuccess":true,"code":"-3"}
+
+🔔金榜创造营, 结束! 🕛 22.214 秒
+

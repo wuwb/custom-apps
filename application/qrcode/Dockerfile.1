@@ -1,0 +1,24 @@
+FROM ubuntu:18.04
+
+RUN cat /etc/apt/sources.list | sed -e "s/archive\.ubuntu\.com/mirrors\.aliyun\.com/" | sed -e "s/security\.ubuntu\.com/mirrors\.aliyun\.com/" | tee /etc/apt/sources.list
+RUN apt update && \
+    apt install -y unzip wget
+
+WORKDIR /data
+
+# https://github.com/fukuchi/libqrencode
+RUN apt install -y autoconf automake autotools-dev libtool pkg-config libpng-dev && \
+    cd /data && wget https://github.com/fukuchi/libqrencode/archive/master.zip && unzip master.zip && rm -rf master.zip && \
+    cd libqrencode-master && ./autogen.sh && ./configure && make && make install && ldconfig && \
+    cd .. && rm -rf libqrencode-master
+
+RUN apt install -y libgd-dev
+
+ADD ngx_http_qrcode /data/ngx_http_qrcode
+ADD nginx-1.15.5.tar.gz /data
+ADD nginx.conf /data
+
+RUN apt install -y libpcre3 libpcre3-dev && \
+    cd nginx-1.15.5 && ./configure --add-module=../ngx_http_qrcode/ && \
+    make && make install && mv /data/nginx.conf /usr/local/nginx/conf/nginx.conf && \
+    cd .. && rm -rf ngx_http_qrcode

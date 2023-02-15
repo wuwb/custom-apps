@@ -1,0 +1,34 @@
+{
+    "$schema": "https://cqhttp.cc/config-schema.json",
+
+    "host": "0.0.0.0",
+    "port": 5700,
+    "use_http": true,
+    "post_url": "http://host.docker.internal:8080",
+    "post_message_format": "string",
+
+    "ws_host": "0.0.0.0",
+    "ws_port": 6700,
+    "use_ws": false,
+    "ws_reverse_url": "",
+    "ws_reverse_api_url": "ws://host.docker.internal:9999/ws/api/",
+    "ws_reverse_event_url": "ws://host.docker.internal:9999/ws/event/",
+    "ws_reverse_reconnect_interval": 3000,
+    "ws_reverse_reconnect_on_code_1000": true,
+    "use_ws_reverse": false,
+
+    "access_token": "",
+    "secret": "",
+
+    "serve_data_files": false,
+
+    "update_source": "global",
+    "update_channel": "stable",
+    "auto_check_update": false,
+    "auto_perform_update": false,
+
+    "show_log_console": true,
+    "max_log_file_size": 6291456,
+    "max_log_files": 3,
+    "log_level": "info"
+}

@@ -1,0 +1,9 @@
+[
+  {
+    targets": [ "make.tongdelove.com" ],
+    "labels": {
+      "env": "prod",
+      "job": "api"
+    }
+  }
+]

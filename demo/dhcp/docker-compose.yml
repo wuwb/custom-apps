@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+  unifi:
+    image: jacobalberty/unifi:latest
+    volumes:
+      - unifi_data:/unifi
+    networks:
+      - dhcp
+    restart: always
+    environment:
+      TZ: Europe/Stockholm
+
+volumes:
+  unifi_data:
+
+networks:
+  dhcp:
+    driver: qnet
+    ipam:
+      driver: qnet
+      options:
+        iface: "eth0"

@@ -1,0 +1,21 @@
+version: "2"
+services:
+  bookstack:
+	image: linuxserver/bookstack
+	container_name: bookstack
+	environment:
+	  - PUID=1000
+	  - PGID=1000
+	  - DB_HOST=10.0.3.1:3306
+	  - DB_USER=bookstack
+	  - DB_PASS=<password>
+	  - DB_DATABASE=bookstack
+	volumes:
+	  - /share/Vol1/bookstack_config:/config
+	ports:
+	  - 6875:6875
+	restart: unless-stopped
+
+# https://github.com/BookStackApp/BookStack
+# nc: getaddrinfo: Name does not resolve
+#https://stackoverflow.com/questions/54433522/docker-compose-and-postgres-name-does-not-resolve

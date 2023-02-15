@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+  qrcode:
+    image: wuwb/qrcode.nas.com:latest
+    expose:
+      - 80
+    networks:
+      - traefik
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
+
+      - "traefik.http.routers.qrcode.entrypoints=http"
+      - "traefik.http.routers.qrcode.rule=Host(`qrcode.nas.com`)"
+
+networks:
+  traefik:
+    external: true

@@ -1,0 +1,31 @@
+=============== Aug 30, 2021 (HKT) ===============
+20:12:27.861885 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+20:12:27.928308 db@open opening
+20:12:27.930152 version@stat F·[] S·0B[] Sc·[]
+20:12:27.968316 db@janitor F·2 G·0
+20:12:27.968390 db@open done T·39.610787ms
+20:13:42.597220 db@close closing
+20:13:42.597530 db@close done T·331.407µs
+=============== Aug 30, 2021 (HKT) ===============
+20:14:42.106557 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+20:14:42.118466 version@stat F·[] S·0B[] Sc·[]
+20:14:42.122132 db@open opening
+20:14:42.127134 journal@recovery F·1
+20:14:42.133345 journal@recovery recovering @1
+20:14:42.159759 memdb@flush created L0@2 N·2 S·148B "iss..igh,v2":"iss..low,v1"
+20:14:42.164855 version@stat F·[1] S·148B[148B] Sc·[0.25]
+20:14:42.312035 db@janitor F·3 G·0
+20:14:42.318565 db@open done T·194.524686ms
+20:32:30.267916 db@close closing
+20:32:30.267984 db@close done T·79.186µs
+=============== Aug 30, 2021 (HKT) ===============
+20:33:30.554775 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+20:33:30.572483 version@stat F·[1] S·148B[148B] Sc·[0.25]
+20:33:30.578240 db@open opening
+20:33:30.584772 journal@recovery F·1
+20:33:30.596711 journal@recovery recovering @3
+20:33:30.607598 version@stat F·[1] S·148B[148B] Sc·[0.25]
+20:33:30.709443 db@janitor F·3 G·0
+20:33:30.710786 db@open done T·130.380271ms
+21:22:39.294342 db@close closing
+21:22:39.304349 db@close done T·10.024482ms

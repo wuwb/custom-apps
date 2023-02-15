@@ -1,0 +1,47 @@
+
+🔔口袋书店, 开始!
+
+====================共1个京东账号Cookie=========
+
+==================脚本执行- 北京时间(UTC+8)：2022/6/27 上午8:15:59=====================
+
+开始获取口袋书店配置文件
+
+共1个京东账号
+
+您提供了0个账号的口袋书店助力码
+
+
+******开始【京东账号1】***************
+
+由于您第1个京东账号未提供shareCode,将采纳本脚本自带的助力码
+
+第1个京东账号将要助力的好友["28a699ac78d74aa3b31f7103597f8927","2f14ee9c92954cf79829320dd482bf49","fdf827db272543d88dbb51a505c2e869","ce2536153a8742fb9e8754a9a7d361da","38ba4e7ba8074b78851e928af2b4f6b2"]
+口袋书店 API请求失败，请检查网路重试
+
+❗️口袋书店, 错误!
+TypeError: Cannot read property 'secretPin' of null
+    at /jd/scripts/jd_bookshop.js:229:33
+    at got.post.then.message (/jd/scripts/jd_bookshop.js:759:5772)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+今日助力情况0/10
+SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at safeGet (/jd/scripts/jd_bookshop.js:737:21)
+    at /jd/scripts/jd_bookshop.js:456:15
+    at got.post.then.message (/jd/scripts/jd_bookshop.js:759:5772)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+京东服务器访问数据为空，请检查自身设备网络情况
+SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at safeGet (/jd/scripts/jd_bookshop.js:737:21)
+    at /jd/scripts/jd_bookshop.js:511:15
+    at got.post.then.message (/jd/scripts/jd_bookshop.js:759:5772)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+京东服务器访问数据为空，请检查自身设备网络情况
+
+❌ 口袋书店, 失败! 原因: TypeError: Cannot read property 'storeGold' of undefined!
+
+
+🔔口袋书店, 结束! 🕛 2.928 秒
+

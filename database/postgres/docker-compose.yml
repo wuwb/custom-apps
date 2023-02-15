@@ -1,0 +1,44 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres
+    container_name: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    networks:
+      - traefik
+      - internal
+    environment:
+      - POSTGRES_DB=ttrss
+      - POSTGRES_PASSWORD=202402.
+      - POSTGRES_USER=root
+    volumes:
+      - ../../custom-apps-data/postgres/data:/var/lib/postgresql/data
+    healthcheck:
+      test: pg_isready -U "$$POSTGRES_USER" -d "$$POSTGRES_DB"
+      interval: 10s
+      timeout: 2s
+      retries: 10
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
+
+      - "traefik.http.routers.postgres.entrypoints=postgres"
+      # - "traefik.http.routers.postgres.rule=Host(`postgres.nas.com`)"
+
+      # - "traefik.http.routers.postgres-ssl.entrypoints=https"
+      # - "traefik.http.routers.postgres-ssl.tls=true"
+      # - "traefik.http.routers.postgres-ssl.tls.certresolver=myresolver"
+      # - "traefik.http.routers.postgres-ssl.rule=Host(`postgres.nas.com`)"
+      # - "traefik.http.routers.postgres-ssl.middlewares=traefik-forward-auth@docker"
+
+      - "traefik.tcp.services.postgres.loadbalancer.server.port=5432"
+
+networks:
+  internal:
+    external: false
+    internal: true
+  traefik:
+    external: true

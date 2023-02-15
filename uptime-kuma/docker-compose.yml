@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  uptime:
+    image: louislam/uptime-kuma:latest
+    container_name: uptime-kuma
+    restart: always
+    ports: 
+      - 3001:3001
+    volumes:
+      - uptime-kuma:/app/data
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
+      - "traefik.http.routers.uptime-kuma.entrypoints=http"
+      - "traefik.http.routers.uptime-kuma.rule=PathPrefix(`/uptime-kuma`)"
+    networks:
+      - traefik
+
+volumes:
+  uptime-kuma:
+
+networks:
+  traefik:
+    external: true

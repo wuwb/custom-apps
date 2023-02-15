@@ -1,0 +1,30 @@
+
+🔔东东超市, 开始!
+
+====================共1个京东账号Cookie=========
+
+==================脚本执行- 北京时间(UTC+8)：2022/6/30 下午4:10:14=====================
+
+共1个京东账号
+
+
+开始【京东账号1】******
+
+
+❗️东东超市, 错误!
+TypeError: Cannot read property 'bizCode' of undefined
+    at /jd/scripts/jd_superMarket.js:229:29
+    at isSurge.isLoon.isQuanX.isNode.got.on.then.message (/jd/scripts/jd_superMarket.js:1660:5721)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+
+❗️东东超市, 错误!
+TypeError: Cannot read property 'bizCode' of undefined
+    at BeanSign (/jd/scripts/jd_superMarket.js:272:38)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async jdSuperMarket (/jd/scripts/jd_superMarket.js:86:5)
+    at async /jd/scripts/jd_superMarket.js:67:7
+【京东账号1】
+
+
+🔔东东超市, 结束! 🕛 0.855 秒
+

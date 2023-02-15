@@ -1,0 +1,33 @@
+version: "3.9"
+
+services: 
+  nocodb: 
+    container_name: nocodb
+    environment: 
+      # host.docker.internal only defined in Windows and Mac
+      # NC_DB: "mysql2://host.docker.internal:3306?u=noco&p=202402.&d=noco"
+      NC_DB: "mysql2://172.29.8.1:3306?u=noco&p=202402.&d=noco"
+      # - "NC_DB=pg://nocodb-db:5432?u=${DATABASE_USER}&p=${DATABASE_PW}&d=${DATABASE_NAME}"
+      # - "NC_PUBLIC_URL=https://nocodb.${DOMAINNAME}"
+      # - NC_DISABLE_TELE=true
+    image: "nocodb/nocodb:latest"
+    ports: 
+      - "8082:8080"
+    restart: always
+    volumes: 
+      - "nc_data:/usr/app/data"
+    networks:
+      - traefik
+    labels:
+      - traefik.enable=false
+      # - traefik.http.services.nocodb.loadbalancer.server.port=8080
+      # - "traefik.http.routers.nocodb.rule=Host(`nocodb.${DOMAINNAME}`)"
+      # - traefik.http.routers.nocodb.entrypoints=https
+      # - com.centurylinklabs.watchtower.enable=true
+
+volumes: 
+  nc_data: {} # name 默认和标签一样
+
+networks:
+  traefik:
+    external: true

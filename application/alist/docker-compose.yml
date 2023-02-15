@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  alist:
+    image: xhofe/alist:latest
+    restart: always
+    container_name: alist
+    ports:
+      - '5244:5244'
+    volumes:
+      - ./alist:/opt/alist/data
+

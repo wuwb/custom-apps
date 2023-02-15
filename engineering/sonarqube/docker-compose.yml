@@ -1,0 +1,46 @@
+version: '3.9'
+
+services:
+  sonarqube:
+    image: docker.lab.com/sonar.lab.com:7.3
+    expose:
+      - 9000
+      - 9001
+      - 9092
+    environment:
+      SONARQUBE_JDBC_USERNAME: sonar
+      SONARQUBE_JDBC_PASSWORD: sonar
+      SONARQUBE_JDBC_URL: 'jdbc:postgresql://db:5432/sonar'
+      JAVA_OPTS: '-Duser.timezone=Asia/Shanghai'
+    depends_on:
+      - db
+    volumes:
+      - ./data/conf:/opt/sonarqube/conf
+      - ./data/data:/opt/sonarqube/data
+      - ./data/extensions:/opt/sonarqube/extensions
+      - ./data/bundled-plugins:/opt/sonarqube/lib/bundled-plugins
+    networks:
+      - traefik
+    labels:
+      - "traefik.enable=true"
+      - "traefik.port=9000"
+      - "traefik.frontend.rule=Host:sonar.lab.com"
+      - "traefik.frontend.entryPoints=http,https"
+
+  db:
+    image: postgres:10.4-alpine
+    expose:
+      - 5432
+    environment:
+      - POSTGRES_USER=sonar
+      - POSTGRES_PASSWORD=sonar
+    volumes:
+      - ./data/postgresql:/var/lib/postgresql
+      # This needs explicit mapping due to https://github.com/docker-library/postgres/blob/4e48e3228a30763913ece952c611e5e9b95c8759/Dockerfile.template#L52
+      - ./data/postgresql_data:/var/lib/postgresql/data
+    networks:
+      - traefik
+
+networks:
+  traefik:
+    external: true

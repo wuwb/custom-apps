@@ -1,0 +1,23 @@
+version: '3.9'
+
+services:
+  adguardhome:
+    image: adguard/adguardhome
+    container_name: adguardhome
+    networks:
+      qnet-static-eth0:
+        ipv4_address: 192.168.68.5
+    restart: always
+    ports:
+      - "3000:3000"
+      - "80:80"
+      - "53:53"
+    command: -h 0.0.0.0 -c /opt/adguardhome/conf/AdGuardHome.yaml -w /opt/adguardhome/work --no-check-update
+    entrypoint: /opt/adguardhome/AdGuardHome
+    volumes:
+      - ./work:/opt/adguardhome/work
+      - ./conf:/opt/adguardhome/conf
+
+networks:
+  qnet-static-eth0:
+    external: true

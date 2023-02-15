@@ -1,0 +1,52 @@
+
+🔔京喜工厂, 开始!
+
+====================共1个京东账号Cookie=========
+
+==================脚本执行- 北京时间(UTC+8)：2022/7/1 下午12:21:37=====================
+
+开始获取京喜工厂配置文件
+
+由于您环境变量(DREAM_FACTORY_SHARE_CODES)里面未提供助力码，故此处运行将会给脚本内置的码进行助力，请知晓！
+共1个京东账号
+
+您提供了2个账号的京喜工厂助力码
+
+获取签名参数成功！
+fp: 2001327635209165
+token: tk01wbc5a1c6b30nHQ6SkBsVa2KLAh79y9Vzrxjhdk1OvDqvXwxn0eUq1xo78LpvxROvGDN7iZm/WfmsgS5GK7bB1/uD
+enCryptMethodJD: function test(tk,fp,ts,ai,algo){var rd='Q6SkBsVa2KLM';var str=`${tk}${fp}${ts}${ai}${rd}`;return algo.MD5(str)}
+
+团活动ID: GAy1vgkXvnWFyGhxfH-ZvA==
+有效时间：2022/02/01 00:00:00 - 2022/04/30 23:59:59
+团ID已过期
+
+团活动ID: NdcqpdxDfx3ttnfLhvbT1A==
+有效时间：2022/01/31 00:00:00 - 2022/02/28 23:59:59
+团ID已过期
+
+团活动ID: xeqnltMDk5x_VWiD8Bq1_A==
+有效时间：2021/11/12 00:00:00 - 2022/01/30 23:59:59
+团ID已过期
+
+团活动ID: tCo0qqjNLYX_v3sjUL8RcQ==
+有效时间：2021/08/01 00:00:00 - 2021/09/30 23:59:59
+团ID已过期
+
+******开始【京东账号1】***************
+
+GetUserInfo异常：{"msg":"登录京东账号才可以继续游戏哦~","nowTime":1656649299,"ret":10001}
+
+❗️京喜工厂, 错误!
+TypeError: Cannot read property 'assistListToday' of undefined
+    at /jd/scripts/jd_dreamFactory.js:526:23
+    at isSurge.isLoon.isQuanX.isNode.got.on.then.message (/jd/scripts/jd_dreamFactory.js:1722:4869)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+开始
+"Response code 403 (Forbidden)"
+京喜工厂 API请求失败，请检查网路重试
+第1个京东账号将要助力的好友["XOR3A1bQDLLlTvR5WzR3bg==","0f51WgzYHydCEESfms3PTg==","SmMbqc8FwQ0Zqml8FIJQ7w==","RGNzC42xzWN8zracxob5Iw==","CLs7z5ljieqUmYFCz-mPIg==","","WghOSPpHylNG1VOUUY0UCw==","RsjljNAAYotorAKjJjTGHg=="]
+助力朋友：XOR3A1bQDLLlTvR5WzR3bg==成功，因一次只能助力一个，故跳出助力
+
+🔔京喜工厂, 结束! 🕛 2.43 秒
+

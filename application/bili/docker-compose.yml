@@ -1,0 +1,50 @@
+version: '3.9'
+
+services:
+  bilibili_tool:
+    image: zai7lou/bilibili_tool_pro
+    container_name: bilibili_tool_pro
+    # restart: always
+    volumes:
+      - ./Logs:/app/Logs
+    tty: true
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - Ray_Security__IsSkipDailyTask=false
+
+      # Cookie字符串（必填）：
+      - Ray_BiliBiliCookies__1=_uuid=51965C24-10BC10-79BC-D112-5E4622E6793A21361infoc; buvid3=EE9E4603-CE0A-406D-9E11-F38BB4ED1164167635infoc; rpdid=|(u)~m~Ju||m0J'uYJ~l)l)J|; video_page_version=v_old_home; i-wanna-go-back=-1; LIVE_BUVID=AUTO2616403573834201; CURRENT_BLACKGAP=0; nostalgia_conf=-1; hit-dyn-v2=1; sid=88kisp0x; blackside_state=0; buvid_fp_plain=undefined; DedeUserID=39485747; DedeUserID__ckMd5=73d76c9a903f45dc; SESSDATA=ea6af979%2C1671254893%2Cde0fc*61; bili_jct=d37b327ceb531cdb40496171be637835; b_ut=5; fingerprint3=399266aa4e27112d76f41b86f5df9310; fingerprint=f0e2c6ca2ac64d0da7fe76a8690bd7c2; b_nut=1663241672; is-2022-channel=1; CURRENT_FNVAL=16; buvid4=E4D4276A-8E77-A7AC-B146-5F8F5C6574E074629-022092818-Nj4igL5r0eZ/MOE3yb1yOA%3D%3D; CURRENT_QUALITY=80; PVID=1; bsource=search_google; innersign=0; b_lsid=1027A1109D_18431F58E59; buvid_fp=74bf5046a427341e062f7a6200aec04c; bp_video_offset_39485747=723455939465707500
+      - Ray_BiliBiliCookies__2=
+
+      # 定时任务
+      - Ray_DailyTaskConfig__Cron=0 15 * * *
+      - Ray_LiveLotteryTaskConfig__Cron=0 22 * * *
+      - Ray_UnfollowBatchedTaskConfig__Cron=0 6 1 * *
+      - Ray_VipBigPointConfig__Cron=7 1 * * *
+
+      # UA：
+      - Ray_Security__UserAgent=
+      # 开始运行前随机随眠最大分钟数：
+      - Ray_Security__RandomSleepMaxMin=2
+      # 调用接口间的间隔秒数：
+      - Ray_Security__IntervalSecondsBetweenRequestApi=
+
+      # 目标投币数量：
+      - Ray_DailyTaskConfig__NumberOfCoins=
+
+      # 天选抽奖指定排除关键字
+      - Ray_LiveLotteryTaskConfig__ExcludeAwardNames=
+      # 天选抽奖指定包含关键字
+      - Ray_LiveLotteryTaskConfig__IncludeAwardNames=
+
+      # 企业微信推送地址：
+      - Ray_Serilog__WriteTo__4__Args__webHookUrl=
+      # 钉钉：
+      - Ray_Serilog__WriteTo__5__Args__webHookUrl=
+      # PushPlus推送：
+      - Ray_Serilog__WriteTo__9__Args__token=
+      - Ray_Serilog__WriteTo__9__Args__topic=
+      - Ray_Serilog__WriteTo__9__Args__channel=
+      - Ray_Serilog__WriteTo__9__Args__webhook=
+      # Server酱推送scKey：
+      - Ray_Serilog__WriteTo__6__Args__turboScKey=

@@ -1,0 +1,88 @@
+version: '3.9'
+
+services:
+  wp:
+    image: ${WP_IMAGE}
+    
+    restart: always
+    container_name: ${WP_HOST}
+    ports:
+      - "8000:80"
+      - "4430:443"
+    networks:
+      - traefik
+    environment:
+      WORDPRESS_DB_HOST: ${DB_HOST}
+      WORDPRESS_TABLE_PREFIX: ${WP_DB_PREFIX}
+      WORDPRESS_DB_NAME: ${DB_NAME}
+      WORDPRESS_DB_USER: ${DB_USER}
+      WORDPRESS_DB_PASSWORD: ${DB_PASS}
+      WORDPRESS_LOCALE: zh_CN
+      WORDPRESS_DEBUG: 1
+      WORDPRESS_CONFIG_EXTRA: |
+        define('FORCE_SSL_LOGIN', false);
+        define('FORCE_SSL_ADMIN', false);
+    volumes:
+      - ./config/php.conf.uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+      - ./wordpress:/var/www/html
+    # labels:
+    #   - "traefik.enable=true"
+    #   - "traefik.frontend.rule=Host:wp.wuwb.me"
+    #   - "traefik.frontend.entryPoints=https,http"
+
+  # mariadb:
+  #   image: ${DB_IMAGE}
+  #   restart: always
+  #   container_name: ${DB_HOST}
+  #   networks:
+  #     - traefik
+  #   environment:
+  #     MYSQL_DATABASE: ${DB_NAME}
+  #     MYSQL_USER: ${DB_USER}
+  #     MYSQL_PASSWORD: ${DB_PASS}
+  #     MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASS}
+  #   volumes:
+  #     - ./data:/var/lib/mysql
+
+  # pma:
+  #   image: ${PMA_IMAGE}
+  #   restart: always
+  #   networks:
+  #     - traefik
+  #   environment:
+  #     MYSQL_USER: ${DB_USER}
+  #     MYSQL_PASSWORD: ${DB_PASS}
+  #     MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASS}
+  #     PMA_HOST: ${DB_HOST}
+  #   labels:
+  #     - "traefik.enable=true"
+  #     - "traefik.frontend.rule=Host:${PMA_DOMAIN}"
+
+  # 加入 nginx 用于静态资源服务
+  nginx:
+    image: ${NGX_IMAGE}
+    restart: always
+    networks:
+      - traefik
+    expose:
+      - 80
+    volumes:
+      - ./conf:/etc/nginx/conf.d
+      - ./logs:/var/log/nginx
+      - ./wordpress:/var/www/html
+    depends_on:
+      - wp
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
+
+      - "traefik.http.routers.wp-nginx.entryPoints=http"
+      - "traefik.http.routers.wp-nginx.rule=Host(`${NGX_DOMAINS}`)"
+
+      # - "traefik.http.routers.wp-nginx-ssl.entrypoints=https"
+      # - "traefik.http.routers.wp-nginx-ssl.tls=true"
+      # - "traefik.http.routers.wp-nginx-ssl.rule=Host(`wp.nas.com`)"
+
+networks:
+  traefik:
+    external: true

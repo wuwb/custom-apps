@@ -1,0 +1,6 @@
+FROM nextcloud:latest
+
+RUN apt update && apt upgrade -y
+RUN apt install ffmpeg smbclient libsmbclient-dev -y
+RUN pecl install smbclient
+RUN docker-php-ext-enable smbclient

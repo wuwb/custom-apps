@@ -1,0 +1,42 @@
+version: '3.9'
+
+services:
+
+  mysql:
+    container_name: ${DOCKER_MYSQL_HOST}
+    image: ${DOCKER_MYSQL_IMAGE}
+    restart: always
+    expose:
+      - 3306
+    networks:
+      - traefik
+    environment:
+      MYSQL_USER: ${DOCKER_MYSQL_USER}
+      MYSQL_PASSWORD: ${DOCKER_MYSQL_PASS}
+      MYSQL_DATABASE: ${DOCKER_MYSQL_NAME}
+      MYSQL_ROOT_PASSWORD: ${DOCKER_MYSQL_ROOT}
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_bin --default-storage-engine=INNODB --max_allowed_packet=256M --transaction-isolation=READ-COMMITTED --binlog_format=row --ngram_token_size=2
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - ./db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "/etc/init.d/mysql status"]
+      interval: 30s
+
+  redis:
+    image: ${DOCKER_REDIS_IMAGE}
+    restart: always
+    container_name: ${DOCKER_REDIS_HOST}
+    expose:
+      - 6379
+    networks:
+      - traefik
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+    environment:
+      TZ: Asia/Shanghai
+
+networks:
+  traefik:
+    external: true

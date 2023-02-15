@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+  redmine:
+    image: redmine
+    container_name: redmine
+    restart: always
+    ports:
+      - 8080:3000
+    networks:
+      - postgres
+    environment:
+      - REDMINE_PLUGINS_MIGRATE=true
+    volumes:
+      - /Users/eqielb/Docker/data/redmine/files:/usr/src/redmine/files
+
+networks:
+    postgres:
+        external: true

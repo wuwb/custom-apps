@@ -1,0 +1,71 @@
+; 设置
+2016-06-14 custom "fava-option" "default-file"
+2016-06-14 custom "fava-option" "interval" "week"
+2016-04-14 custom "fava-option" "journal-show" "transaction open"
+2016-04-14 custom "fava-option" "currency-column" "60"
+2020-01-01 custom "fava-option" "language" "zh_CN"
+2020-01-01 custom "fava-option" "auto-reload" "false"
+
+option "operating_currency" "CNY"
+option "operating_currency" "USD"
+
+; Assets 资产
+2020-01-01 open Assets:Cash; 现金账户
+
+; Liabilities 負債
+2020-01-01 open Liabilities:Main;
+
+; Equity 权益 净资产
+2020-01-01 open Equity:Opening-Balances;
+
+; Expenses 支出
+2020-01-01 open Expenses:Cash; 现金
+2020-01-01 open Expenses:Food:Vegetables; 买菜
+2020-01-01 open Expenses:Food:Dinner; 大餐
+2020-01-01 open Expenses:House:Electricity; 电费
+2020-01-01 open Expenses:Clothing; 买衣服
+
+; Income 收入
+2020-01-01 open Income:Salary; 薪资
+2020-01-01 open Income:Redbag; 红包
+
+; (Income + Liabilities) + (Assets + Expenses) + Equity = 0
+
+; 开始记账
+;2020-10-16 * "賬戶初始"
+;  Assets:Cash                                   1121480.16 CNY
+;  Equity:Opening-Balances                      -1121480.16 CNY
+
+2020-10-15 * "买菜"
+  Expenses:Food:Vegetables                            21.4 CNY
+  Assets:Cash                                        -21.4 CNY
+
+2020-10-15 * "电费"
+  Expenses:House:Electricity                         24.97 CNY
+  Assets:Cash                                       -24.97 CNY
+
+2020-10-15 * "红包"
+  Income:Redbag                                      10.17 CNY
+  Assets:Cash                                       -10.17 CNY
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

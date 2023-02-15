@@ -1,0 +1,29 @@
+version: '3.9'
+
+services:
+  stock:
+    image: pythonstock/pythonstock:latest
+    container_name: stock
+    ports:
+      - 8888:8888
+      - 9999:9999
+    environment:
+      - MYSQL_HOST=mariadb
+      - MYSQL_USER=root
+      - MYSQL_PWD=202402.
+      - MYSQL_DB=stock
+    volumes:
+      - ./data/notebooks:/data/notebooks 
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
+
+      - "traefik.http.routers.stock.entrypoints=http"
+      - "traefik.http.routers.stock.rule=Host(`stock.nas.com`)"
+    networks:
+      - traefik
+
+networks:
+    traefik:
+        external: true
+        

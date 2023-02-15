@@ -1,0 +1,38 @@
+# https://github.com/whyour/qinglong
+version: '3.9'
+
+services:
+  qinglong:
+    image: whyour/qinglong:latest
+    container_name: qinglong
+    volumes:
+      - ./data/config:/ql/config
+      - ./data/log:/ql/log
+      - ./data/db:/ql/db
+      - ./data/scripts:/ql/scripts
+      - ./data/repo:/ql/repo
+    ports:
+      - 5700:5700
+    environment:
+      - ENABLE_HANGUP=true
+      - ENABLE_WEB_PANEL=true
+    restart: always
+    networks:
+        - traefik
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
+
+      - "traefik.http.routers.qinglong.entrypoints=http"
+      - "traefik.http.routers.qinglong.rule=Host(`qinglong.nas.com`)"
+      - "traefik.http.routers.qinglong.middlewares=traefik-forward-auth@docker"
+
+      # - "traefik.http.routers.qinglong-ssl.entrypoints=https"
+      # - "traefik.http.routers.qinglong-ssl.tls=true"
+      # - "traefik.http.routers.qinglong-ssl.tls.certresolver=myresolver"
+      # - "traefik.http.routers.qinglong-ssl.rule=Host(`qinglong.nas.com`)"
+      # - "traefik.http.routers.qinglong-ssl.middlewares=traefik-forward-auth@docker"
+
+networks:
+    traefik:
+        external: true

@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+    aliyun-ddns:
+        image: sanjusss/aliyun-ddns:latest
+        network_mode: host
+        restart: always
+        environment:
+            - AKID=7WywrOH8A0sUSgGy
+            - AKSCT=UvWYdnQ7KqikZPTm8qyjIgecudVzqk
+            - DOMAIN=a1.printlake.com
+            - REDO=300
+            - TTL=60
+            - TIMEZONE=8.0
+            - TYPE=AAAA

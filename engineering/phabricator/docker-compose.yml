@@ -1,0 +1,41 @@
+version: '3.9'
+
+services:
+  phabricator:
+    image: bitnami/phabricator:2021.13.0
+    expose:
+      - 8080
+    environment:
+      - APACHE_HTTP_PORT_NUMBER=8080
+      - PHABRICATOR_ENABLE_HTTPS=false
+      - PHABRICATOR_HOST=board.lab.com
+      - PHABRICATOR_ALTERNATE_FILE_DOMAIN=board-file.lab.com
+      - ALLOW_EMPTY_PASSWORD=yes
+      - PHABRICATOR_SKIP_BOOTSTRAP=yes
+      - PHABRICATOR_DATABASE_HOST=board.data.lab.com
+      - PHABRICATOR_DATABASE_PORT_NUMBER=3306
+      - PHABRICATOR_EXISTING_DATABASE_USER=root
+      - PHABRICATOR_EXISTING_DATABASE_PASSWORD=QV8}!P![&QmR
+      - PHABRICATOR_ENABLE_PYGMENTS=true
+    networks:
+      - traefik
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
+
+      - "traefik.http.routers.phab0.middlewares=https-redirect@file"
+      - "traefik.http.routers.phab0.entrypoints=http"
+      - "traefik.http.routers.phab0.rule=Host(`board.lab.com`, `board-file.lab.com`, `phabricator.lab.io`, `phabricator-file.lab.io`)"
+      - "traefik.http.routers.phab1.middlewares=content-compress@file"
+      - "traefik.http.routers.phab1.entrypoints=https"
+      - "traefik.http.routers.phab1.tls=true"
+      - "traefik.http.routers.phab1.rule=Host(`board.lab.com`, `board-file.lab.com`, `phabricator.lab.io`, `phabricator-file.lab.io`)"
+      
+      - "traefik.http.services.phabbackend.loadbalancer.server.scheme=http"
+      - "traefik.http.services.phabbackend.loadbalancer.server.port=8080"
+    volumes:
+      - ./libphabricator.sh:/opt/bitnami/scripts/libphabricator.sh:ro
+
+networks:
+  traefik:
+    external: true

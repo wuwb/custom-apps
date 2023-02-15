@@ -1,0 +1,78 @@
+
+🔔金榜创造营, 开始!
+
+====================共1个京东账号Cookie=========
+
+==================脚本执行- 北京时间(UTC+8)：2022/6/27 下午10:00:00=====================
+
+
+******开始【京东账号1】***************
+
+共有9个主题
+
+❗️金榜创造营, 错误!
+TypeError: Cannot read property 'taskStatus' of undefined
+    at doTask2 (/jd/scripts/jd_gold_creator.js:217:17)
+    at /jd/scripts/jd_gold_creator.js:170:23
+    at isSurge.isLoon.isQuanX.isNode.got.on.then.message (/jd/scripts/jd_gold_creator.js:351:4869)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+已投票0主题
+
+
+开始给【立体式健康】主题下的商品进行投票
+当前剩余投票次数：0
+给 【华帝 变频油烟机 】 商品投票
+失败：{"isSuccess":false,"code":"3","msg":"用户未登录"}
+
+
+开始给【精细化家电】主题下的商品进行投票
+当前剩余投票次数：0
+给 【TCL电视 75V6D 】 商品投票
+失败：{"isSuccess":false,"code":"3","msg":"用户未登录"}
+
+
+开始给【纯净式护理】主题下的商品进行投票
+当前剩余投票次数：0
+给 【欧乐B 牙线卷】 商品投票
+失败：{"isSuccess":false,"code":"3","msg":"用户未登录"}
+
+
+开始给【细致化美学】主题下的商品进行投票
+当前剩余投票次数：0
+给 【玉兰油 小白瓶套装】 商品投票
+失败：{"isSuccess":false,"code":"3","msg":"用户未登录"}
+
+
+开始给【潮酷来电家】主题下的商品进行投票
+当前剩余投票次数：0
+给 【realme 真我GT Neo3 】 商品投票
+失败：{"isSuccess":false,"code":"3","msg":"用户未登录"}
+
+
+开始给【新奇式尝鲜】主题下的商品进行投票
+当前剩余投票次数：0
+给 【伊利 QQ星DHA牛奶】 商品投票
+失败：{"isSuccess":false,"code":"3","msg":"用户未登录"}
+
+
+开始给【尽兴乐活派】主题下的商品进行投票
+当前剩余投票次数：0
+给 【荣耀70 IMX800】 商品投票
+失败：{"isSuccess":false,"code":"3","msg":"用户未登录"}
+
+
+开始给【沉浸式家务】主题下的商品进行投票
+当前剩余投票次数：0
+给 【戴森 V12吸尘器】 商品投票
+失败：{"isSuccess":false,"code":"3","msg":"用户未登录"}
+
+
+开始给【家庭游乐场】主题下的商品进行投票
+当前剩余投票次数：0
+给 【戴尔 游匣G15笔记本电脑】 商品投票
+失败：{"isSuccess":false,"code":"3","msg":"用户未登录"}
+
+揭榜失败：{"isSuccess":true,"code":"-3"}
+
+🔔金榜创造营, 结束! 🕛 21.996 秒
+

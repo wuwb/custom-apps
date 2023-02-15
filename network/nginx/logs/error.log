@@ -1,0 +1,10 @@
+2020/04/26 13:31:39 [notice] 22#22: signal process started
+2020/04/26 13:32:07 [emerg] 24#24: bind() to 0.0.0.0:80 failed (98: Address already in use)
+2020/04/26 13:32:07 [emerg] 24#24: bind() to 0.0.0.0:80 failed (98: Address already in use)
+2020/04/26 13:32:07 [emerg] 24#24: bind() to 0.0.0.0:80 failed (98: Address already in use)
+2020/04/26 13:32:07 [emerg] 24#24: bind() to 0.0.0.0:80 failed (98: Address already in use)
+2020/04/26 13:32:07 [emerg] 24#24: bind() to 0.0.0.0:80 failed (98: Address already in use)
+2020/04/26 13:33:10 [error] 6#6: *1 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2020/04/26 13:33:14 [error] 6#6: *2 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "dev.printlake.com", referrer: "http://dev.printlake.com/"
+2020/04/28 13:56:57 [error] 6#6: *4 open() "/usr/share/nginx/html/_api/events" failed (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET /_api/events?version=3.7.7&buildid=R3.7.7.201801311814&os=macosx&arch=x86_64&nl=en_CN&distrib=cathy_macosx&account_type=free&license_info=&firstStartTimestamp=1587528900488&startTimestamp1=1587528900488&startTimestamp2=1587561384799&startTimestamp3=1588082217847 HTTP/1.1", host: "www.xmind.net"
+2020/05/01 02:36:35 [error] 6#6: *6 open() "/usr/share/nginx/html/_api/events" failed (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET /_api/events?version=3.7.7&buildid=R3.7.7.201801311814&os=macosx&arch=x86_64&nl=en_CN&distrib=cathy_macosx&account_type=free&license_info=&firstStartTimestamp=1587528900488&startTimestamp1=1587561384799&startTimestamp2=1588082217847&startTimestamp3=1588300595192 HTTP/1.1", host: "www.xmind.net"

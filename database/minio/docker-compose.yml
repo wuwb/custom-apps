@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  minio:
+    image: minio/minio:latest
+    restart: always
+    ports:
+      - "9001:9000"
+      - "9002:9001"
+    volumes:
+      - ./data:/data
+      - ./config:/root/.minio/
+    environment:
+      MINIO_ROOT_USER: "admin"
+      MINIO_ROOT_PASSWORD: "202402Wb."
+    # 开启 traefik 端口自动发现
+    command: server --console-address ':9001' /data
+    privileged: true
+    networks:
+       - traefik
+    labels:
+       - traefik.port=9001
+       - traefik.frontend.rule=Host:minio.nas.com
+       - traefik.frontend.entryPoints=http,https
+
+networks:
+    traefik:
+        external: true

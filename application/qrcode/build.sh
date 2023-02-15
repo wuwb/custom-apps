@@ -1,0 +1,1 @@
+docker build -t wuwb/qrcode.nas.com .

@@ -1,0 +1,50 @@
+version: "3"
+services:
+
+  outline:
+    image: outlinewiki/outline
+    env_file: ./docker.env
+    ports:
+      - "3000:3000"
+    depends_on:
+      - storage
+
+  storage:
+    image: minio/minio
+    env_file: ./docker.env
+    ports:
+      - "9000:9000"
+    entrypoint: sh
+    command: -c 'minio server'
+    deploy:
+      restart_policy:
+        condition: on-failure
+    volumes:
+      - storage-data:/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+
+  https-portal:
+    image: steveltn/https-portal
+    env_file: ./docker.env
+    ports:
+      - '80:80'
+      - '443:443'
+    links:
+      - outline
+      - storage
+    restart: always
+    volumes:
+      - https-portal-data:/var/lib/https-portal
+    healthcheck:
+      test: ["CMD", "service", "nginx", "status"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+
+volumes:
+  https-portal-data:
+  storage-data:

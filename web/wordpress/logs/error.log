@@ -1,0 +1,391 @@
+2021/09/13 06:03:14 [notice] 1#1: using the "epoll" event method
+2021/09/13 06:03:14 [notice] 1#1: nginx/1.20.1
+2021/09/13 06:03:14 [notice] 1#1: built by gcc 10.2.1 20201203 (Alpine 10.2.1_pre1) 
+2021/09/13 06:03:14 [notice] 1#1: OS: Linux 4.14.24-qnap
+2021/09/13 06:03:14 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 65535:65535
+2021/09/13 06:03:14 [notice] 1#1: start worker processes
+2021/09/13 06:03:14 [notice] 1#1: start worker process 22
+2021/09/13 06:03:14 [notice] 1#1: start worker process 23
+2021/09/13 06:03:14 [notice] 1#1: start worker process 24
+2021/09/13 06:03:14 [notice] 1#1: start worker process 25
+2021/09/13 06:06:41 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/09/13 06:06:41 [notice] 23#23: gracefully shutting down
+2021/09/13 06:06:41 [notice] 25#25: gracefully shutting down
+2021/09/13 06:06:41 [notice] 23#23: exiting
+2021/09/13 06:06:41 [notice] 25#25: exiting
+2021/09/13 06:06:41 [notice] 23#23: exit
+2021/09/13 06:06:41 [notice] 25#25: exit
+2021/09/13 06:06:41 [notice] 22#22: gracefully shutting down
+2021/09/13 06:06:41 [notice] 22#22: exiting
+2021/09/13 06:06:41 [notice] 24#24: gracefully shutting down
+2021/09/13 06:06:41 [notice] 24#24: exiting
+2021/09/13 06:06:41 [notice] 22#22: exit
+2021/09/13 06:06:41 [notice] 24#24: exit
+2021/09/13 06:06:41 [notice] 1#1: signal 17 (SIGCHLD) received from 24
+2021/09/13 06:06:41 [notice] 1#1: worker process 22 exited with code 0
+2021/09/13 06:06:41 [notice] 1#1: worker process 23 exited with code 0
+2021/09/13 06:06:41 [notice] 1#1: worker process 24 exited with code 0
+2021/09/13 06:06:41 [notice] 1#1: worker process 25 exited with code 0
+2021/09/13 06:06:41 [notice] 1#1: exit
+2021/09/13 06:06:52 [notice] 1#1: using the "epoll" event method
+2021/09/13 06:06:52 [notice] 1#1: nginx/1.20.1
+2021/09/13 06:06:52 [notice] 1#1: built by gcc 10.2.1 20201203 (Alpine 10.2.1_pre1) 
+2021/09/13 06:06:52 [notice] 1#1: OS: Linux 4.14.24-qnap
+2021/09/13 06:06:52 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 65535:65535
+2021/09/13 06:06:52 [notice] 1#1: start worker processes
+2021/09/13 06:06:52 [notice] 1#1: start worker process 23
+2021/09/13 06:06:52 [notice] 1#1: start worker process 24
+2021/09/13 06:06:52 [notice] 1#1: start worker process 25
+2021/09/13 06:06:52 [notice] 1#1: start worker process 26
+2021/09/13 06:36:42 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/09/13 06:36:42 [notice] 25#25: gracefully shutting down
+2021/09/13 06:36:42 [notice] 23#23: gracefully shutting down
+2021/09/13 06:36:42 [notice] 25#25: exiting
+2021/09/13 06:36:42 [notice] 23#23: exiting
+2021/09/13 06:36:42 [notice] 25#25: exit
+2021/09/13 06:36:42 [notice] 23#23: exit
+2021/09/13 06:36:42 [notice] 26#26: gracefully shutting down
+2021/09/13 06:36:42 [notice] 26#26: exiting
+2021/09/13 06:36:42 [notice] 24#24: gracefully shutting down
+2021/09/13 06:36:42 [notice] 26#26: exit
+2021/09/13 06:36:42 [notice] 24#24: exiting
+2021/09/13 06:36:42 [notice] 24#24: exit
+2021/09/13 06:36:42 [notice] 1#1: signal 17 (SIGCHLD) received from 25
+2021/09/13 06:36:42 [notice] 1#1: worker process 23 exited with code 0
+2021/09/13 06:36:42 [notice] 1#1: worker process 25 exited with code 0
+2021/09/13 06:36:42 [notice] 1#1: worker process 26 exited with code 0
+2021/09/13 06:36:42 [notice] 1#1: signal 29 (SIGIO) received
+2021/09/13 06:36:42 [notice] 1#1: signal 17 (SIGCHLD) received from 24
+2021/09/13 06:36:42 [notice] 1#1: worker process 24 exited with code 0
+2021/09/13 06:36:42 [notice] 1#1: exit
+2021/09/13 06:36:53 [notice] 1#1: using the "epoll" event method
+2021/09/13 06:36:53 [notice] 1#1: nginx/1.20.1
+2021/09/13 06:36:53 [notice] 1#1: built by gcc 10.2.1 20201203 (Alpine 10.2.1_pre1) 
+2021/09/13 06:36:53 [notice] 1#1: OS: Linux 4.14.24-qnap
+2021/09/13 06:36:53 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 65535:65535
+2021/09/13 06:36:53 [notice] 1#1: start worker processes
+2021/09/13 06:36:53 [notice] 1#1: start worker process 22
+2021/09/13 06:36:53 [notice] 1#1: start worker process 23
+2021/09/13 06:36:53 [notice] 1#1: start worker process 24
+2021/09/13 06:36:53 [notice] 1#1: start worker process 25
+2021/09/13 14:31:57 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/09/13 14:31:57 [notice] 22#22: gracefully shutting down
+2021/09/13 14:31:57 [notice] 22#22: exiting
+2021/09/13 14:31:57 [notice] 23#23: gracefully shutting down
+2021/09/13 14:31:57 [notice] 23#23: exiting
+2021/09/13 14:31:57 [notice] 25#25: gracefully shutting down
+2021/09/13 14:31:57 [notice] 24#24: gracefully shutting down
+2021/09/13 14:31:57 [notice] 24#24: exiting
+2021/09/13 14:31:57 [notice] 22#22: exit
+2021/09/13 14:31:57 [notice] 23#23: exit
+2021/09/13 14:31:57 [notice] 25#25: exiting
+2021/09/13 14:31:57 [notice] 24#24: exit
+2021/09/13 14:31:57 [notice] 25#25: exit
+2021/09/13 14:31:57 [notice] 1#1: signal 17 (SIGCHLD) received from 23
+2021/09/13 14:31:57 [notice] 1#1: worker process 22 exited with code 0
+2021/09/13 14:31:57 [notice] 1#1: worker process 23 exited with code 0
+2021/09/13 14:31:57 [notice] 1#1: worker process 24 exited with code 0
+2021/09/13 14:31:57 [notice] 1#1: worker process 25 exited with code 0
+2021/09/13 14:31:57 [notice] 1#1: exit
+2021/09/13 23:09:00 [notice] 1#1: using the "epoll" event method
+2021/09/13 23:09:00 [notice] 1#1: nginx/1.20.1
+2021/09/13 23:09:00 [notice] 1#1: built by gcc 10.2.1 20201203 (Alpine 10.2.1_pre1) 
+2021/09/13 23:09:00 [notice] 1#1: OS: Linux 4.14.24-qnap
+2021/09/13 23:09:00 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 65535:65535
+2021/09/13 23:09:00 [notice] 1#1: start worker processes
+2021/09/13 23:09:00 [notice] 1#1: start worker process 22
+2021/09/13 23:09:00 [notice] 1#1: start worker process 23
+2021/09/13 23:09:00 [notice] 1#1: start worker process 24
+2021/09/13 23:09:00 [notice] 1#1: start worker process 25
+2021/09/14 06:16:51 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/09/14 06:16:51 [notice] 22#22: gracefully shutting down
+2021/09/14 06:16:51 [notice] 25#25: gracefully shutting down
+2021/09/14 06:16:51 [notice] 25#25: exiting
+2021/09/14 06:16:51 [notice] 24#24: gracefully shutting down
+2021/09/14 06:16:51 [notice] 24#24: exiting
+2021/09/14 06:16:51 [notice] 23#23: gracefully shutting down
+2021/09/14 06:16:51 [notice] 23#23: exiting
+2021/09/14 06:16:51 [notice] 22#22: exiting
+2021/09/14 06:16:51 [notice] 22#22: exit
+2021/09/14 06:16:51 [notice] 25#25: exit
+2021/09/14 06:16:51 [notice] 24#24: exit
+2021/09/14 06:16:51 [notice] 23#23: exit
+2021/09/14 06:16:51 [notice] 1#1: signal 17 (SIGCHLD) received from 22
+2021/09/14 06:16:51 [notice] 1#1: worker process 22 exited with code 0
+2021/09/14 06:16:51 [notice] 1#1: worker process 24 exited with code 0
+2021/09/14 06:16:51 [notice] 1#1: worker process 23 exited with code 0
+2021/09/14 06:16:51 [notice] 1#1: worker process 25 exited with code 0
+2021/09/14 06:16:51 [notice] 1#1: exit
+2021/09/14 06:18:20 [notice] 1#1: using the "epoll" event method
+2021/09/14 06:18:20 [notice] 1#1: nginx/1.20.1
+2021/09/14 06:18:20 [notice] 1#1: built by gcc 10.2.1 20201203 (Alpine 10.2.1_pre1) 
+2021/09/14 06:18:20 [notice] 1#1: OS: Linux 4.14.24-qnap
+2021/09/14 06:18:20 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 65535:65535
+2021/09/14 06:18:20 [notice] 1#1: start worker processes
+2021/09/14 06:18:20 [notice] 1#1: start worker process 22
+2021/09/14 06:18:20 [notice] 1#1: start worker process 23
+2021/09/14 06:18:20 [notice] 1#1: start worker process 24
+2021/09/14 06:18:20 [notice] 1#1: start worker process 25
+2021/09/14 14:31:56 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/09/14 14:31:56 [notice] 22#22: gracefully shutting down
+2021/09/14 14:31:56 [notice] 22#22: exiting
+2021/09/14 14:31:56 [notice] 22#22: exit
+2021/09/14 14:31:56 [notice] 23#23: gracefully shutting down
+2021/09/14 14:31:56 [notice] 23#23: exiting
+2021/09/14 14:31:56 [notice] 23#23: exit
+2021/09/14 14:31:56 [notice] 24#24: gracefully shutting down
+2021/09/14 14:31:56 [notice] 24#24: exiting
+2021/09/14 14:31:56 [notice] 25#25: gracefully shutting down
+2021/09/14 14:31:56 [notice] 25#25: exiting
+2021/09/14 14:31:56 [notice] 24#24: exit
+2021/09/14 14:31:56 [notice] 25#25: exit
+2021/09/14 14:31:56 [notice] 1#1: signal 17 (SIGCHLD) received from 22
+2021/09/14 14:31:56 [notice] 1#1: worker process 22 exited with code 0
+2021/09/14 14:31:56 [notice] 1#1: worker process 23 exited with code 0
+2021/09/14 14:31:56 [notice] 1#1: worker process 24 exited with code 0
+2021/09/14 14:31:56 [notice] 1#1: worker process 25 exited with code 0
+2021/09/14 14:31:56 [notice] 1#1: exit
+2021/09/14 23:08:32 [notice] 1#1: using the "epoll" event method
+2021/09/14 23:08:32 [notice] 1#1: nginx/1.20.1
+2021/09/14 23:08:32 [notice] 1#1: built by gcc 10.2.1 20201203 (Alpine 10.2.1_pre1) 
+2021/09/14 23:08:32 [notice] 1#1: OS: Linux 4.14.24-qnap
+2021/09/14 23:08:32 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 65535:65535
+2021/09/14 23:08:32 [notice] 1#1: start worker processes
+2021/09/14 23:08:32 [notice] 1#1: start worker process 22
+2021/09/14 23:08:32 [notice] 1#1: start worker process 23
+2021/09/14 23:08:32 [notice] 1#1: start worker process 24
+2021/09/14 23:08:32 [notice] 1#1: start worker process 25
+2021/09/15 14:31:52 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/09/15 14:31:52 [notice] 22#22: gracefully shutting down
+2021/09/15 14:31:52 [notice] 25#25: gracefully shutting down
+2021/09/15 14:31:52 [notice] 25#25: exiting
+2021/09/15 14:31:52 [notice] 24#24: gracefully shutting down
+2021/09/15 14:31:52 [notice] 23#23: gracefully shutting down
+2021/09/15 14:31:52 [notice] 22#22: exiting
+2021/09/15 14:31:52 [notice] 25#25: exit
+2021/09/15 14:31:52 [notice] 24#24: exiting
+2021/09/15 14:31:52 [notice] 24#24: exit
+2021/09/15 14:31:52 [notice] 23#23: exiting
+2021/09/15 14:31:52 [notice] 22#22: exit
+2021/09/15 14:31:52 [notice] 23#23: exit
+2021/09/15 14:31:52 [notice] 1#1: signal 17 (SIGCHLD) received from 25
+2021/09/15 14:31:52 [notice] 1#1: worker process 22 exited with code 0
+2021/09/15 14:31:52 [notice] 1#1: worker process 23 exited with code 0
+2021/09/15 14:31:52 [notice] 1#1: worker process 24 exited with code 0
+2021/09/15 14:31:52 [notice] 1#1: worker process 25 exited with code 0
+2021/09/15 14:31:52 [notice] 1#1: exit
+2021/09/15 23:08:40 [notice] 1#1: using the "epoll" event method
+2021/09/15 23:08:40 [notice] 1#1: nginx/1.20.1
+2021/09/15 23:08:40 [notice] 1#1: built by gcc 10.2.1 20201203 (Alpine 10.2.1_pre1) 
+2021/09/15 23:08:40 [notice] 1#1: OS: Linux 4.14.24-qnap
+2021/09/15 23:08:40 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 65535:65535
+2021/09/15 23:08:40 [notice] 1#1: start worker processes
+2021/09/15 23:08:40 [notice] 1#1: start worker process 23
+2021/09/15 23:08:40 [notice] 1#1: start worker process 24
+2021/09/15 23:08:40 [notice] 1#1: start worker process 25
+2021/09/15 23:08:40 [notice] 1#1: start worker process 26
+2021/09/16 14:31:49 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/09/16 14:31:49 [notice] 23#23: gracefully shutting down
+2021/09/16 14:31:49 [notice] 23#23: exiting
+2021/09/16 14:31:49 [notice] 24#24: gracefully shutting down
+2021/09/16 14:31:49 [notice] 24#24: exiting
+2021/09/16 14:31:49 [notice] 25#25: gracefully shutting down
+2021/09/16 14:31:49 [notice] 25#25: exiting
+2021/09/16 14:31:49 [notice] 26#26: gracefully shutting down
+2021/09/16 14:31:49 [notice] 26#26: exiting
+2021/09/16 14:31:49 [notice] 23#23: exit
+2021/09/16 14:31:49 [notice] 24#24: exit
+2021/09/16 14:31:49 [notice] 25#25: exit
+2021/09/16 14:31:49 [notice] 26#26: exit
+2021/09/16 14:31:49 [notice] 1#1: signal 17 (SIGCHLD) received from 25
+2021/09/16 14:31:49 [notice] 1#1: worker process 23 exited with code 0
+2021/09/16 14:31:49 [notice] 1#1: worker process 24 exited with code 0
+2021/09/16 14:31:49 [notice] 1#1: worker process 25 exited with code 0
+2021/09/16 14:31:49 [notice] 1#1: worker process 26 exited with code 0
+2021/09/16 14:31:49 [notice] 1#1: exit
+2021/09/16 23:09:01 [notice] 1#1: using the "epoll" event method
+2021/09/16 23:09:01 [notice] 1#1: nginx/1.20.1
+2021/09/16 23:09:01 [notice] 1#1: built by gcc 10.2.1 20201203 (Alpine 10.2.1_pre1) 
+2021/09/16 23:09:01 [notice] 1#1: OS: Linux 4.14.24-qnap
+2021/09/16 23:09:01 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 65535:65535
+2021/09/16 23:09:01 [notice] 1#1: start worker processes
+2021/09/16 23:09:01 [notice] 1#1: start worker process 23
+2021/09/16 23:09:01 [notice] 1#1: start worker process 24
+2021/09/16 23:09:01 [notice] 1#1: start worker process 25
+2021/09/16 23:09:01 [notice] 1#1: start worker process 26
+2021/09/17 14:31:48 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/09/17 14:31:48 [notice] 23#23: gracefully shutting down
+2021/09/17 14:31:48 [notice] 23#23: exiting
+2021/09/17 14:31:48 [notice] 24#24: gracefully shutting down
+2021/09/17 14:31:48 [notice] 24#24: exiting
+2021/09/17 14:31:48 [notice] 25#25: gracefully shutting down
+2021/09/17 14:31:48 [notice] 25#25: exiting
+2021/09/17 14:31:48 [notice] 26#26: gracefully shutting down
+2021/09/17 14:31:48 [notice] 23#23: exit
+2021/09/17 14:31:48 [notice] 24#24: exit
+2021/09/17 14:31:48 [notice] 25#25: exit
+2021/09/17 14:31:48 [notice] 26#26: exiting
+2021/09/17 14:31:48 [notice] 26#26: exit
+2021/09/17 14:31:48 [notice] 1#1: signal 17 (SIGCHLD) received from 23
+2021/09/17 14:31:48 [notice] 1#1: worker process 23 exited with code 0
+2021/09/17 14:31:48 [notice] 1#1: worker process 24 exited with code 0
+2021/09/17 14:31:48 [notice] 1#1: worker process 25 exited with code 0
+2021/09/17 14:31:48 [notice] 1#1: worker process 26 exited with code 0
+2021/09/17 14:31:48 [notice] 1#1: exit
+2021/09/17 23:08:30 [notice] 1#1: using the "epoll" event method
+2021/09/17 23:08:30 [notice] 1#1: nginx/1.20.1
+2021/09/17 23:08:30 [notice] 1#1: built by gcc 10.2.1 20201203 (Alpine 10.2.1_pre1) 
+2021/09/17 23:08:30 [notice] 1#1: OS: Linux 4.14.24-qnap
+2021/09/17 23:08:30 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 65535:65535
+2021/09/17 23:08:30 [notice] 1#1: start worker processes
+2021/09/17 23:08:30 [notice] 1#1: start worker process 22
+2021/09/17 23:08:30 [notice] 1#1: start worker process 23
+2021/09/17 23:08:30 [notice] 1#1: start worker process 24
+2021/09/17 23:08:30 [notice] 1#1: start worker process 25
+2021/09/18 14:32:26 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/09/18 14:32:26 [notice] 22#22: gracefully shutting down
+2021/09/18 14:32:26 [notice] 22#22: exiting
+2021/09/18 14:32:26 [notice] 23#23: gracefully shutting down
+2021/09/18 14:32:26 [notice] 23#23: exiting
+2021/09/18 14:32:26 [notice] 25#25: gracefully shutting down
+2021/09/18 14:32:26 [notice] 25#25: exiting
+2021/09/18 14:32:26 [notice] 24#24: gracefully shutting down
+2021/09/18 14:32:26 [notice] 22#22: exit
+2021/09/18 14:32:26 [notice] 23#23: exit
+2021/09/18 14:32:26 [notice] 24#24: exiting
+2021/09/18 14:32:26 [notice] 24#24: exit
+2021/09/18 14:32:26 [notice] 25#25: exit
+2021/09/18 14:32:26 [notice] 1#1: signal 17 (SIGCHLD) received from 23
+2021/09/18 14:32:26 [notice] 1#1: worker process 22 exited with code 0
+2021/09/18 14:32:26 [notice] 1#1: worker process 23 exited with code 0
+2021/09/18 14:32:26 [notice] 1#1: worker process 24 exited with code 0
+2021/09/18 14:32:26 [notice] 1#1: worker process 25 exited with code 0
+2021/09/18 14:32:26 [notice] 1#1: exit
+2021/09/18 23:08:09 [notice] 1#1: using the "epoll" event method
+2021/09/18 23:08:09 [notice] 1#1: nginx/1.20.1
+2021/09/18 23:08:09 [notice] 1#1: built by gcc 10.2.1 20201203 (Alpine 10.2.1_pre1) 
+2021/09/18 23:08:09 [notice] 1#1: OS: Linux 4.14.24-qnap
+2021/09/18 23:08:09 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 65535:65535
+2021/09/18 23:08:09 [notice] 1#1: start worker processes
+2021/09/18 23:08:09 [notice] 1#1: start worker process 23
+2021/09/18 23:08:09 [notice] 1#1: start worker process 24
+2021/09/18 23:08:09 [notice] 1#1: start worker process 25
+2021/09/18 23:08:09 [notice] 1#1: start worker process 26
+2021/09/19 04:02:15 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/09/19 04:02:15 [notice] 23#23: gracefully shutting down
+2021/09/19 04:02:15 [notice] 23#23: exiting
+2021/09/19 04:02:15 [notice] 23#23: exit
+2021/09/19 04:02:15 [notice] 24#24: gracefully shutting down
+2021/09/19 04:02:15 [notice] 24#24: exiting
+2021/09/19 04:02:15 [notice] 24#24: exit
+2021/09/19 04:02:15 [notice] 25#25: gracefully shutting down
+2021/09/19 04:02:15 [notice] 25#25: exiting
+2021/09/19 04:02:15 [notice] 25#25: exit
+2021/09/19 04:02:15 [notice] 26#26: gracefully shutting down
+2021/09/19 04:02:15 [notice] 26#26: exiting
+2021/09/19 04:02:15 [notice] 26#26: exit
+2021/09/19 04:02:15 [notice] 1#1: signal 17 (SIGCHLD) received from 23
+2021/09/19 04:02:15 [notice] 1#1: worker process 23 exited with code 0
+2021/09/19 04:02:15 [notice] 1#1: signal 29 (SIGIO) received
+2021/09/19 04:02:15 [notice] 1#1: signal 17 (SIGCHLD) received from 24
+2021/09/19 04:02:15 [notice] 1#1: worker process 24 exited with code 0
+2021/09/19 04:02:15 [notice] 1#1: signal 29 (SIGIO) received
+2021/09/19 04:02:15 [notice] 1#1: signal 17 (SIGCHLD) received from 26
+2021/09/19 04:02:15 [notice] 1#1: worker process 25 exited with code 0
+2021/09/19 04:02:15 [notice] 1#1: worker process 26 exited with code 0
+2021/09/19 04:02:15 [notice] 1#1: exit
+2021/09/19 04:02:17 [notice] 1#1: using the "epoll" event method
+2021/09/19 04:02:17 [notice] 1#1: nginx/1.20.1
+2021/09/19 04:02:17 [notice] 1#1: built by gcc 10.2.1 20201203 (Alpine 10.2.1_pre1) 
+2021/09/19 04:02:17 [notice] 1#1: OS: Linux 4.14.24-qnap
+2021/09/19 04:02:17 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 65535:65535
+2021/09/19 04:02:17 [notice] 1#1: start worker processes
+2021/09/19 04:02:17 [notice] 1#1: start worker process 23
+2021/09/19 04:02:17 [notice] 1#1: start worker process 24
+2021/09/19 04:02:17 [notice] 1#1: start worker process 25
+2021/09/19 04:02:17 [notice] 1#1: start worker process 26
+2021/09/19 14:31:51 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/09/19 14:31:51 [notice] 25#25: gracefully shutting down
+2021/09/19 14:31:51 [notice] 25#25: exiting
+2021/09/19 14:31:51 [notice] 24#24: gracefully shutting down
+2021/09/19 14:31:51 [notice] 24#24: exiting
+2021/09/19 14:31:51 [notice] 23#23: gracefully shutting down
+2021/09/19 14:31:51 [notice] 23#23: exiting
+2021/09/19 14:31:51 [notice] 26#26: gracefully shutting down
+2021/09/19 14:31:51 [notice] 26#26: exiting
+2021/09/19 14:31:51 [notice] 25#25: exit
+2021/09/19 14:31:51 [notice] 24#24: exit
+2021/09/19 14:31:51 [notice] 23#23: exit
+2021/09/19 14:31:51 [notice] 26#26: exit
+2021/09/19 14:31:51 [notice] 1#1: signal 17 (SIGCHLD) received from 26
+2021/09/19 14:31:51 [notice] 1#1: worker process 23 exited with code 0
+2021/09/19 14:31:51 [notice] 1#1: worker process 24 exited with code 0
+2021/09/19 14:31:51 [notice] 1#1: worker process 25 exited with code 0
+2021/09/19 14:31:51 [notice] 1#1: worker process 26 exited with code 0
+2021/09/19 14:31:51 [notice] 1#1: exit
+2021/09/19 23:08:30 [notice] 1#1: using the "epoll" event method
+2021/09/19 23:08:30 [notice] 1#1: nginx/1.20.1
+2021/09/19 23:08:30 [notice] 1#1: built by gcc 10.2.1 20201203 (Alpine 10.2.1_pre1) 
+2021/09/19 23:08:30 [notice] 1#1: OS: Linux 4.14.24-qnap
+2021/09/19 23:08:30 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 65535:65535
+2021/09/19 23:08:30 [notice] 1#1: start worker processes
+2021/09/19 23:08:30 [notice] 1#1: start worker process 22
+2021/09/19 23:08:30 [notice] 1#1: start worker process 23
+2021/09/19 23:08:30 [notice] 1#1: start worker process 24
+2021/09/19 23:08:30 [notice] 1#1: start worker process 25
+2021/09/20 14:31:49 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/09/20 14:31:49 [notice] 22#22: gracefully shutting down
+2021/09/20 14:31:49 [notice] 22#22: exiting
+2021/09/20 14:31:49 [notice] 24#24: gracefully shutting down
+2021/09/20 14:31:49 [notice] 23#23: gracefully shutting down
+2021/09/20 14:31:49 [notice] 23#23: exiting
+2021/09/20 14:31:49 [notice] 25#25: gracefully shutting down
+2021/09/20 14:31:49 [notice] 22#22: exit
+2021/09/20 14:31:49 [notice] 24#24: exiting
+2021/09/20 14:31:49 [notice] 24#24: exit
+2021/09/20 14:31:49 [notice] 23#23: exit
+2021/09/20 14:31:49 [notice] 25#25: exiting
+2021/09/20 14:31:50 [notice] 1#1: signal 17 (SIGCHLD) received from 22
+2021/09/20 14:31:50 [notice] 1#1: worker process 22 exited with code 0
+2021/09/20 14:31:49 [notice] 25#25: exit
+2021/09/20 14:31:50 [notice] 1#1: worker process 23 exited with code 0
+2021/09/20 14:31:50 [notice] 1#1: worker process 24 exited with code 0
+2021/09/20 14:31:50 [notice] 1#1: signal 29 (SIGIO) received
+2021/09/20 14:31:50 [notice] 1#1: signal 17 (SIGCHLD) received from 24
+2021/09/20 14:31:50 [notice] 1#1: worker process 25 exited with code 0
+2021/09/20 14:31:50 [notice] 1#1: exit
+2021/09/20 23:08:30 [notice] 1#1: using the "epoll" event method
+2021/09/20 23:08:30 [notice] 1#1: nginx/1.20.1
+2021/09/20 23:08:30 [notice] 1#1: built by gcc 10.2.1 20201203 (Alpine 10.2.1_pre1) 
+2021/09/20 23:08:30 [notice] 1#1: OS: Linux 4.14.24-qnap
+2021/09/20 23:08:30 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 65535:65535
+2021/09/20 23:08:30 [notice] 1#1: start worker processes
+2021/09/20 23:08:30 [notice] 1#1: start worker process 22
+2021/09/20 23:08:30 [notice] 1#1: start worker process 23
+2021/09/20 23:08:30 [notice] 1#1: start worker process 24
+2021/09/20 23:08:30 [notice] 1#1: start worker process 25
+2021/09/21 07:55:06 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/09/21 07:55:06 [notice] 22#22: gracefully shutting down
+2021/09/21 07:55:06 [notice] 22#22: exiting
+2021/09/21 07:55:06 [notice] 23#23: gracefully shutting down
+2021/09/21 07:55:06 [notice] 23#23: exiting
+2021/09/21 07:55:06 [notice] 23#23: exit
+2021/09/21 07:55:06 [notice] 24#24: gracefully shutting down
+2021/09/21 07:55:06 [notice] 24#24: exiting
+2021/09/21 07:55:06 [notice] 24#24: exit
+2021/09/21 07:55:06 [notice] 25#25: gracefully shutting down
+2021/09/21 07:55:06 [notice] 25#25: exiting
+2021/09/21 07:55:06 [notice] 22#22: exit
+2021/09/21 07:55:06 [notice] 25#25: exit
+2021/09/21 07:55:06 [notice] 1#1: signal 17 (SIGCHLD) received from 23
+2021/09/21 07:55:06 [notice] 1#1: worker process 23 exited with code 0
+2021/09/21 07:55:06 [notice] 1#1: signal 29 (SIGIO) received
+2021/09/21 07:55:06 [notice] 1#1: signal 17 (SIGCHLD) received from 24
+2021/09/21 07:55:06 [notice] 1#1: worker process 24 exited with code 0
+2021/09/21 07:55:06 [notice] 1#1: signal 29 (SIGIO) received
+2021/09/21 07:55:06 [notice] 1#1: signal 17 (SIGCHLD) received from 22
+2021/09/21 07:55:06 [notice] 1#1: worker process 22 exited with code 0
+2021/09/21 07:55:06 [notice] 1#1: signal 29 (SIGIO) received
+2021/09/21 07:55:06 [notice] 1#1: signal 17 (SIGCHLD) received from 25
+2021/09/21 07:55:06 [notice] 1#1: worker process 25 exited with code 0
+2021/09/21 07:55:06 [notice] 1#1: exit

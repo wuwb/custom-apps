@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  qnet_dhcp:
+    image: alpine
+    container_name: alpine
+    command: ifconfig eth0
+    mac_address: 02:42:ac:11:65:43 # you can even set a mac address!
+    mem_limit: 512000000 # memory limit to 512mb
+    cpus: 0.5
+    # network_mode: bridge
+    networks:
+      - docker_bridge
+
+networks:
+  docker_bridge:
+    external: true
+    

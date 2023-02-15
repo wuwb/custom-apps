@@ -1,0 +1,41 @@
+version: "3.9"
+
+services:
+  code:
+    image: codercom/code-server:3.11.1
+    container_name: code
+    restart: always
+    networks:
+       - traefik
+    #expose:
+    #  - 8080
+    #ports:
+    #  - 8080:8080
+    user: 1003:100
+    environment:
+      - TZ=Asia/Shanghai
+      - DOCKER_USER=wuwb
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /share/homes/wuwb/projects:/home/coder/project:rw
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1m"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
+      
+      - "traefik.http.routers.code.rule=Host(`code.nas.com`)"
+      - "traefik.http.routers.code.entryPoints=http"
+
+      # - "traefik.http.routers.code-ssl.entrypoints=https"
+      # - "traefik.http.routers.code-ssl.tls=true"
+      # - "traefik.http.routers.code-ssl.rule=Host(`code.nas.com`)"
+
+      - "traefik.http.services.code.loadbalancer.server.scheme=http"
+      - "traefik.http.services.code.loadbalancer.server.port=8080"
+
+networks:
+  traefik:
+    external: true

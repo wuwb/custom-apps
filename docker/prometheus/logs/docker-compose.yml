@@ -1,0 +1,39 @@
+services:
+  prometheus:
+    image: prom/prometheus-linux-arm64:v2.10.0
+    container_name: prometheus
+    hostname: prometheus
+    user: "root"
+    restart: unless-stopped
+    volumes:
+      - /etc/hosts:/etc/hosts:ro
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./targets.json:/prometheus-targets.json:ro
+      - prometheus-storage:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.path=/prometheus'
+      - '--storage.tsdb.retention.time=6month'
+      - '--storage.tsdb.retention.size=2GB'
+      - '--web.enable-lifecycle'
+    ports:
+      - 9090:9090
+
+  grafana:
+    image: grafana/grafana:6.2.5
+    container_name: grafana
+    hostname: grafana
+    user: "root"
+    restart: unless-stopped
+    links:
+      - prometheus
+    volumes:
+      - /etc/hosts:/etc/hosts:ro
+      - grafana-storage:/var/lib/grafana
+      - grafana-provisioning:/etc/grafana/provisioning
+    ports:
+      - 3000:3000
+    depends_on:
+      - prometheus

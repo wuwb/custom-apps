@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  umami:
+    image: ghcr.io/umami-software/umami:mysql-latest
+    ports:
+      - "3004:3000"
+    environment:
+      DATABASE_URL: mysql2://172.29.8.1:3306?u=muami&p=202402.&d=umami
+      DATABASE_TYPE: mysql
+      HASH_SALT: ajflaskjdflkasjdf
+    restart: always

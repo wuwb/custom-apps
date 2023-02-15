@@ -1,0 +1,5 @@
+# docker run --name sh -itd \
+# -v /home/StreamerHelper/info.json:/app/templates/info.json \
+# -v /home/StreamerHelper/download:/app/download \
+# --dns 114.114.114.114 \
+# --restart always umuoy1/streamerhelper

@@ -1,0 +1,38 @@
+-- 创建用户
+CREATE USER IF NOT EXISTS root@localhost IDENTIFIED BY '202402.';
+SET PASSWORD FOR root@localhost = PASSWORD('202402.');
+GRANT ALL ON *.* TO root@localhost WITH GRANT OPTION;
+
+CREATE USER IF NOT EXISTS root@'%' IDENTIFIED BY '202402.';
+SET PASSWORD FOR root@'%' = PASSWORD('202402.');
+GRANT ALL ON *.* TO root@'%' WITH GRANT OPTION;
+
+CREATE USER IF NOT EXISTS wenbin@'%' IDENTIFIED BY '202402.';
+SET PASSWORD FOR wenbin@'%' = PASSWORD('202402.');
+
+
+-- 创建数据库
+CREATE DATABASE IF NOT EXISTS `test`;
+GRANT ALL ON `test`.* TO 'wenbin'@'%';
+
+
+-- 创建表
+use test;
+
+CREATE TABLE IF NOT EXISTS tasks (
+  task_id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  start_date DATE,
+  due_date DATE,
+  status TINYINT NOT NULL,
+  priority TINYINT NOT NULL,
+  description TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)  ENGINE=INNODB;
+
+
+CREATE DATABASE IF NOT EXISTS `photoprism`;
+GRANT ALL ON `photoprism`.* TO 'wenbin'@'%';
+
+CREATE DATABASE IF NOT EXISTS `nextcloud`;
+GRANT ALL ON `nextcloud`.* TO 'wenbin'@'%';

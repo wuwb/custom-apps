@@ -1,0 +1,14 @@
+version: "3"
+services:
+  wiki:
+    image: requarks/wiki:2
+    environment:
+      DB_TYPE: mysql
+      DB_HOST: host.docker.internal
+      DB_PORT: 3308
+      DB_USER: wikijs
+      DB_PASS: wikijsrocks
+      DB_NAME: wiki
+    restart: unless-stopped
+    ports:
+      - "80:3000"

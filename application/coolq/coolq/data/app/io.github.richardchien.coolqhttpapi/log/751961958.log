@@ -1,0 +1,139 @@
+[2020-04-10 07:59:42.099] [I] [日志] 日志控制台开启成功
+[2020-04-10 07:59:42.251] [I] [HTTP] 开启 HTTP 服务器成功，开始监听 http://0.0.0.0:5700
+[2020-04-10 07:59:42.257] [I] [反向WS] 开启反向 WebSocket 客户端（API）成功，开始连接 ws://host.docker.internal:9999/ws/api/
+[2020-04-10 07:59:42.264] [I] [反向WS] 开启反向 WebSocket 客户端（Event）成功，开始连接 ws://host.docker.internal:9999/ws/event/
+[2020-04-10 07:59:42.270] [W] [反向WS] 反向 WebSocket（API）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 07:59:42.279] [W] [反向WS] 反向 WebSocket（Event）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 07:59:42.368] [I] [HTTP] 通过 HTTP 上报数据到 http://host.docker.internal:8080 成功，状态码：200
+[2020-04-10 07:59:45.275] [I] [反向WS] 开启反向 WebSocket 客户端（API）成功，开始连接 ws://host.docker.internal:9999/ws/api/
+[2020-04-10 07:59:45.290] [W] [反向WS] 反向 WebSocket（API）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 07:59:45.292] [I] [反向WS] 开启反向 WebSocket 客户端（Event）成功，开始连接 ws://host.docker.internal:9999/ws/event/
+[2020-04-10 07:59:45.300] [W] [反向WS] 反向 WebSocket（Event）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 07:59:48.301] [I] [反向WS] 开启反向 WebSocket 客户端（API）成功，开始连接 ws://host.docker.internal:9999/ws/api/
+[2020-04-10 07:59:48.312] [I] [反向WS] 开启反向 WebSocket 客户端（Event）成功，开始连接 ws://host.docker.internal:9999/ws/event/
+[2020-04-10 07:59:48.317] [W] [反向WS] 反向 WebSocket（API）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 07:59:48.328] [W] [反向WS] 反向 WebSocket（Event）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 07:59:51.324] [I] [反向WS] 开启反向 WebSocket 客户端（API）成功，开始连接 ws://host.docker.internal:9999/ws/api/
+[2020-04-10 07:59:51.338] [I] [反向WS] 开启反向 WebSocket 客户端（Event）成功，开始连接 ws://host.docker.internal:9999/ws/event/
+[2020-04-10 07:59:51.342] [W] [反向WS] 反向 WebSocket（API）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 07:59:51.356] [W] [反向WS] 反向 WebSocket（Event）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 07:59:54.350] [I] [反向WS] 开启反向 WebSocket 客户端（API）成功，开始连接 ws://host.docker.internal:9999/ws/api/
+[2020-04-10 07:59:54.361] [I] [反向WS] 开启反向 WebSocket 客户端（Event）成功，开始连接 ws://host.docker.internal:9999/ws/event/
+[2020-04-10 07:59:54.369] [W] [反向WS] 反向 WebSocket（API）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 07:59:54.375] [W] [反向WS] 反向 WebSocket（Event）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 07:59:57.375] [I] [反向WS] 开启反向 WebSocket 客户端（API）成功，开始连接 ws://host.docker.internal:9999/ws/api/
+[2020-04-10 07:59:57.387] [I] [反向WS] 开启反向 WebSocket 客户端（Event）成功，开始连接 ws://host.docker.internal:9999/ws/event/
+[2020-04-10 07:59:57.394] [W] [反向WS] 反向 WebSocket（API）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 07:59:57.400] [W] [反向WS] 反向 WebSocket（Event）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:00.403] [I] [反向WS] 开启反向 WebSocket 客户端（API）成功，开始连接 ws://host.docker.internal:9999/ws/api/
+[2020-04-10 08:00:00.413] [I] [反向WS] 开启反向 WebSocket 客户端（Event）成功，开始连接 ws://host.docker.internal:9999/ws/event/
+[2020-04-10 08:00:00.426] [W] [反向WS] 反向 WebSocket（API）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:00.428] [W] [反向WS] 反向 WebSocket（Event）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:03.437] [I] [反向WS] 开启反向 WebSocket 客户端（API）成功，开始连接 ws://host.docker.internal:9999/ws/api/
+[2020-04-10 08:00:03.440] [I] [反向WS] 开启反向 WebSocket 客户端（Event）成功，开始连接 ws://host.docker.internal:9999/ws/event/
+[2020-04-10 08:00:03.466] [W] [反向WS] 反向 WebSocket（Event）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:03.468] [W] [反向WS] 反向 WebSocket（API）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:06.479] [I] [反向WS] 开启反向 WebSocket 客户端（Event）成功，开始连接 ws://host.docker.internal:9999/ws/event/
+[2020-04-10 08:00:06.485] [I] [反向WS] 开启反向 WebSocket 客户端（API）成功，开始连接 ws://host.docker.internal:9999/ws/api/
+[2020-04-10 08:00:06.572] [W] [反向WS] 反向 WebSocket（Event）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:06.580] [W] [反向WS] 反向 WebSocket（API）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:09.590] [I] [反向WS] 开启反向 WebSocket 客户端（Event）成功，开始连接 ws://host.docker.internal:9999/ws/event/
+[2020-04-10 08:00:09.606] [I] [反向WS] 开启反向 WebSocket 客户端（API）成功，开始连接 ws://host.docker.internal:9999/ws/api/
+[2020-04-10 08:00:09.616] [W] [反向WS] 反向 WebSocket（Event）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:09.624] [W] [反向WS] 反向 WebSocket（API）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:12.624] [I] [反向WS] 开启反向 WebSocket 客户端（Event）成功，开始连接 ws://host.docker.internal:9999/ws/event/
+[2020-04-10 08:00:12.639] [I] [反向WS] 开启反向 WebSocket 客户端（API）成功，开始连接 ws://host.docker.internal:9999/ws/api/
+[2020-04-10 08:00:12.655] [W] [反向WS] 反向 WebSocket（API）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:12.656] [W] [反向WS] 反向 WebSocket（Event）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:15.665] [I] [反向WS] 开启反向 WebSocket 客户端（API）成功，开始连接 ws://host.docker.internal:9999/ws/api/
+[2020-04-10 08:00:15.666] [I] [反向WS] 开启反向 WebSocket 客户端（Event）成功，开始连接 ws://host.docker.internal:9999/ws/event/
+[2020-04-10 08:00:15.686] [W] [反向WS] 反向 WebSocket（Event）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:15.692] [W] [反向WS] 反向 WebSocket（API）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:18.695] [I] [反向WS] 开启反向 WebSocket 客户端（Event）成功，开始连接 ws://host.docker.internal:9999/ws/event/
+[2020-04-10 08:00:18.707] [I] [反向WS] 开启反向 WebSocket 客户端（API）成功，开始连接 ws://host.docker.internal:9999/ws/api/
+[2020-04-10 08:00:18.714] [W] [反向WS] 反向 WebSocket（Event）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:18.724] [W] [反向WS] 反向 WebSocket（API）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:21.727] [I] [反向WS] 开启反向 WebSocket 客户端（Event）成功，开始连接 ws://host.docker.internal:9999/ws/event/
+[2020-04-10 08:00:21.740] [I] [反向WS] 开启反向 WebSocket 客户端（API）成功，开始连接 ws://host.docker.internal:9999/ws/api/
+[2020-04-10 08:00:21.758] [W] [反向WS] 反向 WebSocket（Event）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:21.771] [W] [反向WS] 反向 WebSocket（API）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:24.767] [I] [反向WS] 开启反向 WebSocket 客户端（Event）成功，开始连接 ws://host.docker.internal:9999/ws/event/
+[2020-04-10 08:00:24.782] [I] [反向WS] 开启反向 WebSocket 客户端（API）成功，开始连接 ws://host.docker.internal:9999/ws/api/
+[2020-04-10 08:00:24.784] [W] [反向WS] 反向 WebSocket（Event）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:24.790] [W] [反向WS] 反向 WebSocket（API）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:27.791] [I] [反向WS] 开启反向 WebSocket 客户端（Event）成功，开始连接 ws://host.docker.internal:9999/ws/event/
+[2020-04-10 08:00:27.805] [I] [反向WS] 开启反向 WebSocket 客户端（API）成功，开始连接 ws://host.docker.internal:9999/ws/api/
+[2020-04-10 08:00:27.815] [W] [反向WS] 反向 WebSocket（Event）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:27.820] [W] [反向WS] 反向 WebSocket（API）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:30.820] [I] [反向WS] 开启反向 WebSocket 客户端（Event）成功，开始连接 ws://host.docker.internal:9999/ws/event/
+[2020-04-10 08:00:30.828] [W] [反向WS] 反向 WebSocket（Event）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:30.831] [I] [反向WS] 开启反向 WebSocket 客户端（API）成功，开始连接 ws://host.docker.internal:9999/ws/api/
+[2020-04-10 08:00:30.843] [W] [反向WS] 反向 WebSocket（API）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:33.835] [I] [反向WS] 开启反向 WebSocket 客户端（Event）成功，开始连接 ws://host.docker.internal:9999/ws/event/
+[2020-04-10 08:00:33.852] [I] [反向WS] 开启反向 WebSocket 客户端（API）成功，开始连接 ws://host.docker.internal:9999/ws/api/
+[2020-04-10 08:00:33.852] [W] [反向WS] 反向 WebSocket（Event）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:33.861] [W] [反向WS] 反向 WebSocket（API）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:36.864] [I] [反向WS] 开启反向 WebSocket 客户端（Event）成功，开始连接 ws://host.docker.internal:9999/ws/event/
+[2020-04-10 08:00:36.867] [I] [反向WS] 开启反向 WebSocket 客户端（API）成功，开始连接 ws://host.docker.internal:9999/ws/api/
+[2020-04-10 08:00:36.897] [W] [反向WS] 反向 WebSocket（API）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:36.902] [W] [反向WS] 反向 WebSocket（Event）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:39.908] [I] [反向WS] 开启反向 WebSocket 客户端（API）成功，开始连接 ws://host.docker.internal:9999/ws/api/
+[2020-04-10 08:00:39.910] [I] [反向WS] 开启反向 WebSocket 客户端（Event）成功，开始连接 ws://host.docker.internal:9999/ws/event/
+[2020-04-10 08:00:39.922] [W] [反向WS] 反向 WebSocket（Event）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:39.922] [W] [反向WS] 反向 WebSocket（API）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:42.931] [I] [反向WS] 开启反向 WebSocket 客户端（API）成功，开始连接 ws://host.docker.internal:9999/ws/api/
+[2020-04-10 08:00:42.935] [I] [反向WS] 开启反向 WebSocket 客户端（Event）成功，开始连接 ws://host.docker.internal:9999/ws/event/
+[2020-04-10 08:00:42.949] [W] [反向WS] 反向 WebSocket（API）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:42.950] [W] [反向WS] 反向 WebSocket（Event）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:45.953] [I] [反向WS] 开启反向 WebSocket 客户端（API）成功，开始连接 ws://host.docker.internal:9999/ws/api/
+[2020-04-10 08:00:45.956] [I] [反向WS] 开启反向 WebSocket 客户端（Event）成功，开始连接 ws://host.docker.internal:9999/ws/event/
+[2020-04-10 08:00:45.971] [W] [反向WS] 反向 WebSocket（API）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:45.978] [W] [反向WS] 反向 WebSocket（Event）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:48.977] [I] [反向WS] 开启反向 WebSocket 客户端（API）成功，开始连接 ws://host.docker.internal:9999/ws/api/
+[2020-04-10 08:00:48.983] [W] [反向WS] 反向 WebSocket（API）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:48.992] [I] [反向WS] 开启反向 WebSocket 客户端（Event）成功，开始连接 ws://host.docker.internal:9999/ws/event/
+[2020-04-10 08:00:48.997] [W] [反向WS] 反向 WebSocket（Event）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:52.001] [I] [反向WS] 开启反向 WebSocket 客户端（API）成功，开始连接 ws://host.docker.internal:9999/ws/api/
+[2020-04-10 08:00:52.002] [I] [反向WS] 开启反向 WebSocket 客户端（Event）成功，开始连接 ws://host.docker.internal:9999/ws/event/
+[2020-04-10 08:00:52.009] [W] [反向WS] 反向 WebSocket（API）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:52.011] [W] [反向WS] 反向 WebSocket（Event）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:55.015] [I] [反向WS] 开启反向 WebSocket 客户端（API）成功，开始连接 ws://host.docker.internal:9999/ws/api/
+[2020-04-10 08:00:55.016] [I] [反向WS] 开启反向 WebSocket 客户端（Event）成功，开始连接 ws://host.docker.internal:9999/ws/event/
+[2020-04-10 08:00:55.026] [W] [反向WS] 反向 WebSocket（API）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:55.028] [W] [反向WS] 反向 WebSocket（Event）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:58.033] [I] [反向WS] 开启反向 WebSocket 客户端（API）成功，开始连接 ws://host.docker.internal:9999/ws/api/
+[2020-04-10 08:00:58.034] [I] [反向WS] 开启反向 WebSocket 客户端（Event）成功，开始连接 ws://host.docker.internal:9999/ws/event/
+[2020-04-10 08:00:58.048] [W] [反向WS] 反向 WebSocket（Event）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:00:58.050] [W] [反向WS] 反向 WebSocket（API）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:01:01.052] [I] [反向WS] 开启反向 WebSocket 客户端（Event）成功，开始连接 ws://host.docker.internal:9999/ws/event/
+[2020-04-10 08:01:01.061] [I] [反向WS] 开启反向 WebSocket 客户端（API）成功，开始连接 ws://host.docker.internal:9999/ws/api/
+[2020-04-10 08:01:01.068] [W] [反向WS] 反向 WebSocket（Event）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:01:01.070] [W] [反向WS] 反向 WebSocket（API）客户端连接失败或异常断开，将在 3000 毫秒后尝试重连
+[2020-04-10 08:01:26.290] [I] [日志] 日志控制台开启成功
+[2020-04-10 08:01:26.572] [I] [HTTP] 开启 HTTP 服务器成功，开始监听 http://0.0.0.0:5700
+[2020-04-10 08:01:26.635] [I] [HTTP] 通过 HTTP 上报数据到 http://host.docker.internal:8080 成功，状态码：200
+[2020-04-10 08:03:31.353] [I] [日志] 日志控制台开启成功
+[2020-04-10 08:03:31.708] [I] [HTTP] 开启 HTTP 服务器成功，开始监听 http://0.0.0.0:5700
+[2020-04-10 08:03:31.959] [I] [HTTP] 通过 HTTP 上报数据到 http://host.docker.internal:8080 成功，状态码：200
+[2020-04-10 08:03:52.678] [I] [HTTP] 通过 HTTP 上报数据到 http://host.docker.internal:8080 成功，状态码：200
+[2020-04-10 08:03:52.735] [I] [HTTP] 通过 HTTP 上报数据到 http://host.docker.internal:8080 成功，状态码：200
+[2020-04-10 08:05:16.397] [I] [HTTP] 已成功处理一个 API 请求：/get_version_info
+[2020-04-10 08:05:26.010] [I] [HTTP] 通过 HTTP 上报数据到 http://host.docker.internal:8080 成功，状态码：200
+[2020-04-10 08:05:26.029] [I] [HTTP] 已成功处理一个 API 请求：/send_private_msg_async
+[2020-04-10 08:13:28.704] [I] [日志] 日志控制台开启成功
+[2020-04-10 08:13:28.831] [I] [HTTP] 开启 HTTP 服务器成功，开始监听 http://0.0.0.0:5700
+[2020-04-10 08:13:28.892] [W] [HTTP] HTTP 上报地址 http://host.docker.internal:8080 无法访问
+[2020-04-10 08:14:13.915] [I] [日志] 日志控制台开启成功
+[2020-04-10 08:14:14.167] [I] [HTTP] 开启 HTTP 服务器成功，开始监听 http://0.0.0.0:5700
+[2020-04-10 08:14:14.239] [W] [HTTP] HTTP 上报地址 http://host.docker.internal:8080 无法访问
+[2020-04-10 08:14:36.061] [I] [日志] 日志控制台开启成功
+[2020-04-10 08:14:36.260] [I] [HTTP] 开启 HTTP 服务器成功，开始监听 http://0.0.0.0:5700
+[2020-04-10 08:14:36.330] [W] [HTTP] HTTP 上报地址 http://host.docker.internal:8080 无法访问
+[2020-04-10 08:15:29.661] [I] [HTTP] 已成功处理一个 API 请求：/get_version_info
+[2020-04-10 08:15:46.764] [I] [HTTP] 通过 HTTP 上报数据到 http://host.docker.internal:8080 成功，状态码：200
+[2020-04-10 08:15:46.920] [I] [HTTP] 通过 HTTP 上报数据到 http://host.docker.internal:8080 成功，状态码：200
+[2020-04-10 08:15:46.929] [I] [HTTP] 已成功处理一个 API 请求：/send_private_msg_async
+[2020-04-10 08:15:47.059] [I] [HTTP] 通过 HTTP 上报数据到 http://host.docker.internal:8080 成功，状态码：200
+[2020-04-11 15:00:43.258] [I] [日志] 日志控制台开启成功
+[2020-04-11 15:00:43.542] [I] [HTTP] 开启 HTTP 服务器成功，开始监听 http://0.0.0.0:5700
+[2020-04-11 15:00:43.937] [I] [HTTP] 通过 HTTP 上报数据到 http://host.docker.internal:8080 成功，状态码：200

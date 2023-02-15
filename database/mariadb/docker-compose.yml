@@ -1,0 +1,50 @@
+version: '3.9'
+
+services:
+  # [docker|podman] run 
+  # --volume [path-of-initfile.sql]:/docker-entrypoint-initdb.d 
+  # --volume [data]:/var/lib/mysql 
+  # --init-file=/docker-entrypoint-initdb.d/initfile.sql
+  mariadb:
+    image: mariadb
+    container_name: mariadb
+    restart: always
+    ports:
+      - "3307:3306"
+    environment:
+      MARIADB_ROOT_PASSWORD: '202402.'
+      MARIADB_DATABASE: ${DB_NAME}
+      MARIADB_USER: ${DB_USER}
+      MARIADB_PASSWORD: ${DB_PASSWORD}
+    security_opt:
+      - seccomp:unconfined
+      - apparmor:unconfined
+    command: mysqld --transaction-isolation=READ-COMMITTED --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --max-connections=512 --innodb-rollback-on-timeout=OFF --innodb-lock-wait-timeout=120 --binlog-format=ROW --innodb-file-per-table=1 --skip-innodb-read-only-compressed
+    volumes:
+      - ./data:/var/lib/mysql
+      - ./init:/docker-entrypoint-initdb.d
+    networks:
+      - traefik
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
+
+      - "traefik.tcp.routers.mariadb.rule=Host(`mariadb.nas.com`)"
+      - "traefik.tcp.routers.mariadb.entrypoints=mysql"
+
+      # - "traefik.http.routers.mariadb-ssl.entrypoints=https"
+      # - "traefik.http.routers.mariadb-ssl.tls=true"
+      # - "traefik.http.routers.mariadb-ssl.tls.certresolver=myresolver"
+      # - "traefik.http.routers.mariadb-ssl.rule=Host(`mariadb.nas.com`)"
+      # - "traefik.http.routers.mariadb-ssl.middlewares=traefik-forward-auth@docker"
+
+      - "traefik.tcp.services.mariadb.loadbalancer.server.scheme=mysql"
+      - "traefik.tcp.services.mariadb.loadbalancer.server.port=3306"
+    healthcheck:
+      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost", "-u", "root", "-p", "202402." ]
+      timeout: 20s
+      retries: 10
+
+networks:
+    traefik:
+        external: true

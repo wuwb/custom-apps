@@ -1,0 +1,37 @@
+version: '3.9'
+
+services:
+  nginx:
+    image: nginx:latest-alphine
+    networks:
+      - traefik
+    volumes:
+      - ./conf:/etc/nginx/config.d
+      - ./logs:/var/log/nginx
+      - ./templates:/etc/nginx/templates:ro
+      - ./docker-entrypoint.d/30-envsubst-on-pages.sh:/docker-entrypoint.d/30-envsubst-on-pages.sh:ro
+      - ./pages:/pages:ro
+    environment:
+      - NGINX_HOST=localhost
+      - NGINX_PORT=80
+      - DEFAULT_CODE=404
+      - DEFAULT_TITLE=The page you're looking for is now beyond our reach. Let's get you..
+      - DEFAULT_DESC=Page not found
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
+
+      - "traefik.http.routers.errorpage.entrypoints=https"
+      - "traefik.http.routers.errorpage.tls=true"
+      - "traefik.http.routers.errorpage.rule=HostRegexp(`{host:.+}`)"
+      - "traefik.http.routers.errorpage.priority=1"
+      - "traefik.http.services.error-pages-service.loadbalancer.server.port=80"
+
+      - "traefik.http.routers.error-pages-router.middlewares=error-pages-middleware@docker"
+      - "traefik.http.middlewares.error-pages-middleware.errors.status=400-599"
+      - "traefik.http.middlewares.error-pages-middleware.errors.service=error-pages-service"
+      - "traefik.http.middlewares.error-pages-middleware.errors.query=/{status}.html"
+
+networks:
+  traefik:
+    external: true

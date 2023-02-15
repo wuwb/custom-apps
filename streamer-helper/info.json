@@ -1,0 +1,52 @@
+{
+  "StreamerHelper": {
+    "debug": false,
+    "roomCheckTime": 600,
+    "recycleCheckTime": 1800,
+    "videoPartLimitSize": 100,
+    "logLevel": "error",
+    "push": {
+      "mail": {
+        "enable": false,
+        "host": "",
+        "port": 465,
+        "from": "",
+        "pwd": "",
+        "to": "",
+        "secure": true
+      },
+      "wechat": {
+        "enable": true,
+        "sendkey": "SCT24498TVM3c8GSZKKX7IO15lTZewvFH"
+      }
+    }
+  },
+  "personInfo": {
+    "nickname": "WW哔",
+    "access_token": "fb7277b7384c21c0c67c1d7ac4b849b2",
+    "refresh_token": "c9f53a08572a50cad038953861e001b2",
+    "expires_in": 15552000,
+    "tokenSignDate": 1667862733542,
+    "mid": 39485747
+  },
+  "streamerInfo": [
+    {
+      "name": "WW哔",
+      "uploadLocalFile": true,
+      "deleteLocalFile": true,
+      "templateTitle": "{{name}}{{time}} 录播",
+      "delayTime": 0,
+      "desc": "欢迎交流探讨",
+      "source": "{{name}} 直播间: {{roomUrl}}",
+      "dynamic": "",
+      "copyright": 2,
+      "roomUrl": "http://live.bilibili.com/3938521",
+      "tid": 231,
+      "tags": [
+        "编程",
+        "写代码",
+        "全栈"
+      ]
+    }
+  ]
+}

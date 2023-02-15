@@ -1,0 +1,26 @@
+[
+  {
+    "id": "sitelink",
+    "type": "inputstring",
+    "name": "Site Link",
+    "value": "https://mikanani.me/"
+  },
+  {
+    "id": "cookieheader",
+    "type": "hiddendata",
+    "name": "CookieHeader",
+    "value": ".AspNetCore.Antiforgery.dIJyUX9c7XY=CfDJ8AjLlBxdqr9InpJYHXb7e4i0dfr8KnY6SugCIbzkTdJRtpFUafkU0-WPJp8WiG9n-llQUSmcIsjWcADfiQKXwnNRrw6tTOA3ifXzploaMdkqlQWKlkI0gJJmBZ_KO_ABEXYc7WoTqmr8Mkgj8rJlNzI; .AspNetCore.Session=CfDJ8AjLlBxdqr9InpJYHXb7e4jauid7WDJnWYSbwVwg%2B68zqaaYh0PWDS1Cafpss8WRjNB1is0Cnr2AKPPeX0GK04IVCwaHuE1wx9ipuNwCcD4GqCtyUYDaHqTyJAZ9qo8KFMdG9UhZ7WdqdOlhiYjZ8uAJzGw%2FLBoBvOSNim08xZUu"
+  },
+  {
+    "id": "lasterror",
+    "type": "hiddendata",
+    "name": "LastError",
+    "value": "Exception (mikan): Connection reset by peer: An error occurred while sending the request."
+  },
+  {
+    "id": "tags",
+    "type": "inputtags",
+    "name": "Tags",
+    "value": ""
+  }
+]

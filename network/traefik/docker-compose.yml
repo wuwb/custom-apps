@@ -1,0 +1,108 @@
+version: '3.9'
+
+services:
+  traefik:
+    container_name: traefik
+    image: traefik:v2.6
+    restart: always
+    networks:
+      - default
+      - traefik
+    ports:
+      # The HTTP port
+      - 52080:80
+      - 52043:443
+      # The Web UI 
+      - 8081:8080
+      - 8082:8082
+      # ssh
+      # - 22:22
+    command: 
+      # Docker swarm configuration
+      - "--providers.docker=true"
+      # Docker服务后端
+      - "--providers.docker.endpoint=unix:///var/run/docker.sock"
+      # 使用 Swarm Mode （默认关闭）
+      - "--providers.docker.swarmMode=false"
+      # 对容器默认进行暴露（默认开启）
+      - "--providers.docker.exposedbydefault=false"
+      - "--providers.docker.network=traefik"
+      # 监控 docker 变化
+      - "--providers.docker.watch=false"
+      # 使用绑定端口的IP地址取代内部私有网络（默认关闭）
+      - "--providers.docker.useBindPortIP=false"
+      # - "--providers.docker.httpClientTimeout=300"
+      # - "--providers.docker.domain=dashboard.nas.com"
+      # - "--providers.docker.tls.insecureSkipVerify=true"
+
+      # SSL configuration
+      # - "--certificatesresolvers.myresolver.acme.httpchallenge=true"
+      # - "--certificatesresolvers.myresolver.acme.httpchallenge.entrypoint=http"
+      # - "--certificatesresolvers.letsencrypt.acme.dnschallenge.provider=cloudflare"
+      # - "--certificatesresolvers.letsencrypt.acme.dnsChallenge.delayBeforeCheck=15"
+      # - "--certificatesResolvers.letsencrypt.acme.dnsChallenge.resolvers=1.1.1.1:53,1.0.0.1:53"
+      # - "--certificatesresolvers.myresolver.acme.tlschallenge=true"
+      # - "--certificatesresolvers.myresolver.acme.email=541330190@qq.com"
+      # - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
+      # test
+      # - "--log.level=DEBUG"
+      # - "--certificatesresolvers.myresolver.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory"
+    volumes:
+      # 仅限标准的 Linux 环境
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      # So that Traefik can listen to the Docker events
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "./letsencrypt:/letsencrypt"
+      - "./traefik.yml:/etc/traefik/traefik.yml"
+      # - "./acme:/etc/traefik/acme"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider --proxy off localhost:8082/ping || exit 1"]
+      interval: 3s
+      timeout: 5s
+      retries: 3
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1m"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 500M
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
+
+      - "traefik.http.routers.traefik.rule=Host(`dashboard.nas.com`) && (PathPrefix(`/api`) || PathPrefix(`/dashboard`))"
+      - "traefik.http.routers.traefik.service=api@internal"
+      - "traefik.http.routers.traefik.middlewares=auth"
+      - "traefik.http.middlewares.auth.basicauth.users=test:$$apr1$$H6uskkkW$$IgXLP6ewTrSuBkTrqE8wj/,test2:$$apr1$$d9hr9HBB$$4HxwgUir3HP4EsggP/QNo0"
+
+      # # 定义中间件
+      # - "traefik.http.middlewares.error-pages-middleware.errors.status=400-599"
+      # - "traefik.http.middlewares.error-pages-middleware.errors.service=error-pages-service"
+      # - "traefik.http.middlewares.error-pages-middleware.errors.query=/{status}.html"
+
+      # # 使用中间件
+      # - "traefik.http.routers.error-pages-router.middlewares=error-pages-middleware@docker"
+      # - "traefik.http.routers.errorpage.entrypoints=https"
+      # - "traefik.http.routers.errorpage.tls=true"
+      # - "traefik.http.routers.errorpage.rule=HostRegexp(`{host:.+}`)"
+      # - "traefik.http.routers.errorpage.priority=1"
+      # - "traefik.http.services.error-pages-service.loadbalancer.server.port=80"
+
+      # 服务
+      - "traefik.http.services.traefik.loadbalancer.server.scheme=http"
+      - "traefik.http.services.traefik.loadbalancer.server.port=80"
+
+networks:
+  traefik:
+    external: true # 用来暴露对外的 web 服务
+  internal:
+    external: false # 内部网络，用来关联数据库等不对外暴露的内部服务
+        
+# networks:
+#   default:
+#     external:
+#       name: traefik

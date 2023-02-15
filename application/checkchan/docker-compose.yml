@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  chrome:
+    image: easychen/checkchan:latest
+    restart: always
+    volumes:
+      - "./data/config:/home/chrome/config"
+      - "./data/app_data:/home/chrome/app_data"
+      - "./data/user_data:/home/chrome/user_data"
+    cap_add:
+      - SYS_ADMIN
+    ports:
+      - '3002:80'
+    environment:
+      - "VDEBUG=OFF"
+      - "VNC=OFF"
+      - API_KEY=checkchan4me # <这里写一个你自己想的API_KEY>
+      - ERROR_IMAGE=NORMAL # NONE,NORMAL,FULL
+      - SNAP_URL_BASE=http://10.0.0.2:3002/ # <开启截图在这里写服务器地址，不开留空> #如 http://ip.com/
+      - SNAP_FULL=1 # 完整网页长图
+      - TZ=Asia/Chongqing

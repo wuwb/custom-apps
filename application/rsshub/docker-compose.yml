@@ -1,0 +1,49 @@
+version: '3.9'
+
+services:
+  rsshub:
+    image: diygod/rsshub
+    container_name: rsshub
+    networks:
+      - traefik
+    restart: always
+    ports:
+      - '182:1200'
+    environment:
+      NODE_ENV: production
+      CACHE_TYPE: redis
+      REDIS_URL: 'redis://redis:6379/'
+      PUPPETEER_WS_ENDPOINT: 'ws://browserless:3000'
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 1000M
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
+      
+      - "traefik.http.routers.rsshub.rule=Host(`rsshub.nas.com`)"
+      - "traefik.http.routers.rsshub.entrypoints=http"
+      # - "traefik.http.routers.rsshub.middlewares=traefik-forward-auth@docker"
+
+      # - "traefik.http.routers.rsshub-ssl.entrypoints=https"
+      # - "traefik.http.routers.rsshub-ssl.tls=true"
+      # - "traefik.http.routers.rsshub-ssl.rule=Host(`rsshub.nas.com`)"
+      # - "traefik.http.routers.rsshub-ssl.middlewares=traefik-forward-auth@docker"
+      
+      # 服务
+      - "traefik.http.services.rsshub.loadbalancer.server.scheme=http"
+      - "traefik.http.services.rsshub.loadbalancer.server.port=1200"
+  browserless:
+    # See issue 6680
+    image: browserless/chrome:1.43-chrome-stable
+    restart: always
+    ulimits:
+      core:
+        hard: 0
+        soft: 0
+
+networks:
+  traefik:
+    external: true
