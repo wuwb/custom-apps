@@ -13,7 +13,7 @@ services:
       - MYSQL_PWD=202402.
       - MYSQL_DB=stock
     volumes:
-      - ./data/notebooks:/data/notebooks 
+      - ../../../custom-apps-data/stock/data/notebooks:/data/notebooks 
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=traefik"

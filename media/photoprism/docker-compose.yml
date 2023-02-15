@@ -1,4 +1,4 @@
-version: '3.5'
+version: '3.9'
 
 # Example Docker Compose config file for PhotoPrism (Linux / AMD64)
 #
@@ -93,7 +93,7 @@ services:
       # Mounting an import folder is optional (see docs):
       # - "~/Import:/photoprism/import"
       # Permanent storage for settings, index & sidecar files (DON'T REMOVE):
-      - "./storage:/photoprism/storage"
+      - "../../../custom-apps-data/photoprism/storage:/photoprism/storage"
     networks:
       - traefik
 

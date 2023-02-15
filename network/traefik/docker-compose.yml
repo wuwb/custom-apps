@@ -12,11 +12,12 @@ services:
       # The HTTP port
       - 52080:80
       - 52043:443
-      # The Web UI 
+      # The Web UI  (enabled by --api.insecure=true)
       - 8081:8080
       - 8082:8082
       # ssh
       # - 22:22
+    # command: --api.insecure=true --providers.docker
     command: 
       # Docker swarm configuration
       - "--providers.docker=true"

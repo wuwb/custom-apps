@@ -1,15 +1,18 @@
 version: '3.9'
 
 services:
+    # https://docs.drone.io/installation/github/multi-machine/#start-the-server
     drone:
         image: ${DOCKER_IMAGE}
-        container_name: drone.nas.com
+        container_name: drone
         restart: unless-stopped
         ports:
             - 8085:80
+            - "443:443"
             - "9001:9000"
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock
+            # - /opt/var/lib/drone:/data:rw
             - "./data:/data"
         environment:
             - DRONE_GITEA_SERVER=http://192.168.68.2:8084
@@ -60,7 +63,10 @@ services:
         healthcheck:
             test: ["CMD-SHELL", "wget -q --spider --proxy off localhost:80/healthz || exit 1"]
             interval: 5s
-    
+
+volumes:
+    drone-data:
+
 networks:
     traefik:
         external: true

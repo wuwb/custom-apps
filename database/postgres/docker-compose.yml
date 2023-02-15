@@ -14,6 +14,7 @@ services:
       - POSTGRES_DB=ttrss
       - POSTGRES_PASSWORD=202402.
       - POSTGRES_USER=root
+      - PGDATA=/var/lib/postgresql/data
     volumes:
       - ../../custom-apps-data/postgres/data:/var/lib/postgresql/data
     healthcheck:

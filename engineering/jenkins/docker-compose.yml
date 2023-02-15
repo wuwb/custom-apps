@@ -1,11 +1,14 @@
-version: "3.7"
+version: "3.9"
 
 services:
   jenkins:
-    image: jenkinsci/blueocean:latest
     container_name: jenkins
+    image: jenkinsci/blueocean:latest
     ports:
       - 8080:8080
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - jenkins-data:/var/jenkins_home \
+      - jenkins-data:/var/jenkins_home
+
+volumes:
+  jenkins-data:

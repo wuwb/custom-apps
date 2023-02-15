@@ -1,19 +1,9 @@
 version: '3.9'
 
 services:
-  db:
-    image: 'mysql:5.7'
-    volumes:
-      - './db_data:/var/lib/mysql'
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: 202402
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD: wordpress
   wordpress:
     depends_on:
-      - db
+      - memcached
     image: 'wordpress:latest'
     ports:
       - '80:80'

@@ -1,0 +1,37 @@
+version: '3.9'
+
+services:
+  gogs:
+    image: gogs/gogs:0.9.113
+    container_name: Gogs
+    networks:
+      - web
+    restart: always
+    ports:
+      - "10022:22"
+      - "10080:3000"
+    volumes:
+      - ./data/gogs:/data
+    links:
+        - mysql:mysql
+    environment:
+      - Domain=${GOGS_IP}
+      - SSH_PORT=${GOGS_SSH_PORT}
+    labels:
+      - "traefik.backend=gogs"
+      - "traefik.frontend.rule=Host:gogs.wuwb.me"
+      - "traefik.port=3000"
+
+  mysql:
+    image: mysql:5.7.13
+    restart: always
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=gogs
+
+networks:
+  web:
+    external:
+      name: traefik_webgateway

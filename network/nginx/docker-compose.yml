@@ -2,7 +2,10 @@ version: '3.9'
 
 services:
   nginx:
-    image: nginx:latest-alphine
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - '80:80'
     networks:
       - traefik
     volumes:
@@ -20,6 +23,8 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=traefik"
+      - "traefik.frontend.rule=Host:${NGX_DOMAINS}"
+      - "traefik.frontend.entryPoints=https,http"
 
       - "traefik.http.routers.errorpage.entrypoints=https"
       - "traefik.http.routers.errorpage.tls=true"

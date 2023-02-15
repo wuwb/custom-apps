@@ -7,10 +7,10 @@ services:
     restart: always
     tty: true
     volumes:
-      - ./config:/jd/config
-      - ./log:/jd/log
-      - ./own:/jd/own
-      - ./scripts:/jd/scripts
+      - ../../../custom-apps-data/jd-scripts/config:/jd/config
+      - ../../../custom-apps-data/jd-scripts/log:/jd/log
+      - ../../../custom-apps-data/jd-scripts/config/own:/jd/own
+      - ../../../custom-apps-data/jd-scripts/config/scripts:/jd/scripts
     ports:
       - 5678:5678
     environment: 

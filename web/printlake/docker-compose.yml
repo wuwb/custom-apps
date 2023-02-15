@@ -1,0 +1,10 @@
+version: '3.9'
+
+services:
+  printlake:
+    image: printlake
+    volumes:
+      - printlake_data:/var/lib/mysql
+
+volumes:
+  printlake_data:

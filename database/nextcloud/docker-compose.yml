@@ -11,7 +11,7 @@ services:
       # Linux 环境下使用
       # - /etc/localtime:/etc/localtime:ro
       # - /etc/timezone:/etc/timezone:ro
-      - ./data:/var/www/html/data:rw
+      - ../../../custom-apps-data/nextcloud/data:/var/www/html/data:rw
       - ./config:/var/www/html/config
       # - ./config.php:/var/www/html/config/config.php:rw
     networks:
@@ -44,6 +44,9 @@ services:
         limits:
           cpus: '0.50'
           memory: 2048M
+          
+volumes:
+  nextcloud-data:
 
 networks:
   traefik:

@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+
+  app:
+    image: gogs/gogs:0.9.113
+    ports:
+      - "10022:22"
+      - "10080:3000"
+    volumes:
+      - ./gogs:/data
+    restart: always
+    links:
+        - mysql:mysql
+    environment:
+      - Domain=${GOGS_IP}
+      - SSH_PORT=${GOGS_SSH_PORT}
+
+  mysql:
+    image: mysql:5.7.13
+    restart: always
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=gogs

@@ -1,0 +1,46 @@
+version: '3.9'
+
+services:
+  # https://docs.drone.io/installation/github/multi-machine/#start-the-server
+  drone-server:
+    image: drone/drone:1
+    name: drone-server
+    restart: always
+    ports:
+      - "443:443"
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      # - /opt/var/lib/drone:/data:rw
+      - drone-data:/data:rw
+    environment:
+      - DRONE_GITHUB_SERVER=https://github.com
+      - DRONE_GITHUB_CLIENT_ID=0941a45809866f62cb46
+      - DRONE_GITHUB_CLIENT_SECRET=0bd93e95136b56bf54a6b90e3646f8cf8e29d8a2
+      - DRONE_AGENTS_ENABLED=true
+      # openssl rand -hex 16
+      - DRONE_RPC_SECRET=5a65d1cab34e344642190d7f0718cf02
+      - DRONE_SERVER_HOST=drone.printlake.com
+      - DRONE_SERVER_PROTO=http
+      - DRONE_TLS_AUTOCERT=true
+      - DRONE_GIT_ALWAYS_AUTH=false
+
+  # https://docs.drone.io/administration/agents/linux-amd64/
+  drone-agent:
+    image: drone/agent:1
+    name: drone-agent
+    restart: always
+    depends_on:
+      - drone-server
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:rw
+    environment:
+      # - DRONE_RPC_SERVER=${DRONE_RPC_SERVER}
+      - DRONE_RPC_SERVER=drone-server:9000
+      # - DRONE_RPC_SECRET=${DRONE_RPC_SECRET}
+      - DRONE_RPC_SECRET=5a65d1cab34e344642190d7f0718cf02
+      - DRONE_RUNNER_CAPACITY=2
+      #- DRONE_RUNNER_NAME=${HOSTNAME} #Optional
+
+volumes:
+  drone-data:

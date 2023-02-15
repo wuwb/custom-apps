@@ -21,7 +21,7 @@ services:
       - apparmor:unconfined
     command: mysqld --transaction-isolation=READ-COMMITTED --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --max-connections=512 --innodb-rollback-on-timeout=OFF --innodb-lock-wait-timeout=120 --binlog-format=ROW --innodb-file-per-table=1 --skip-innodb-read-only-compressed
     volumes:
-      - ./data:/var/lib/mysql
+      - ../../../custom-apps-data/mariadb/data:/var/lib/mysql
       - ./init:/docker-entrypoint-initdb.d
     networks:
       - traefik

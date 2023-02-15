@@ -1,13 +1,13 @@
-version: '3'
+version: '3.9'
 
 services:
   chrome:
     image: easychen/checkchan:latest
     restart: always
     volumes:
-      - "./data/config:/home/chrome/config"
-      - "./data/app_data:/home/chrome/app_data"
-      - "./data/user_data:/home/chrome/user_data"
+      - "../../../custom-apps-data/checkchan/config:/home/chrome/config"
+      - "../../../custom-apps-data/checkchan/app_data:/home/chrome/app_data"
+      - "../../../custom-apps-data/checkchan/user_data:/home/chrome/user_data"
     cap_add:
       - SYS_ADMIN
     ports:
