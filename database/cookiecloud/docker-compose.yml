@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  cookiecloud:
+    image: easychen/cookiecloud:latest
+    container_name: cookiecloud
+    restart: always
+    ports:
+      - 3004:8088 # 默认的webui控制端口
+    volumes:
+      - "../../../custom-apps-data/cookiecloud/cookie:/cookie"
+    environment: 
+      - "API_ROOT=/cookie"
+    networks:
+      - traefik
+    labels:
+      - traefik.enable=false
+      # - traefik.http.services.nocodb.loadbalancer.server.port=8080
+      # - "traefik.http.routers.nocodb.rule=Host(`nocodb.${DOMAINNAME}`)"
+      # - traefik.http.routers.nocodb.entrypoints=https
+      # - com.centurylinklabs.watchtower.enable=true
+
+networks:
+  traefik:
+    external: true

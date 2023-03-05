@@ -1,7 +1,8 @@
 version: "3"
 services:
   jackett:
-    image: lscr.io/linuxserver/jackett:latest
+    # image: lscr.io/linuxserver/jackett:latest
+    image: nyanmisaka/jellyfin:latest # 特供版，配置优化过
     container_name: jackett
     environment:
       - PUID=0
