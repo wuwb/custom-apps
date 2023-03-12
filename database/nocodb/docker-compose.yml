@@ -12,7 +12,7 @@ services:
       # - NC_DISABLE_TELE=true
     image: "nocodb/nocodb:latest"
     ports: 
-      - "8082:8080"
+      - "3304:8080"
     restart: always
     volumes: 
       - "nc_data:/usr/app/data"

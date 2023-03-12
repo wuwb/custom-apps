@@ -6,11 +6,7 @@ services:
     image: whyour/qinglong:latest
     container_name: qinglong
     volumes:
-      - ./data/config:/ql/config
-      - ./data/log:/ql/log
-      - ./data/db:/ql/db
-      - ./data/scripts:/ql/scripts
-      - ./data/repo:/ql/repo
+      - ../../../custom-apps-data/qinglong/data:/ql/data
     ports:
       - 5700:5700
     environment:

@@ -5,7 +5,19 @@ services:
     image: neosmemo/memos:latest
     container_name: memos
     volumes:
-      - /share/Containers/custom-apps-data/memos/:/var/opt/memos
+      - /share/Container/custom-apps-data/memos/:/var/opt/memos
     ports:
-      - 5230:5230
+      - 3005:5230
+    networks:
+      - traefik
+    labels:
+      - traefik.enable=false
+      # - traefik.http.services.nocodb.loadbalancer.server.port=8080
+      # - "traefik.http.routers.nocodb.rule=Host(`nocodb.${DOMAINNAME}`)"
+      # - traefik.http.routers.nocodb.entrypoints=https
+      # - com.centurylinklabs.watchtower.enable=true
+
+networks:
+  traefik:
+    external: true 
 
